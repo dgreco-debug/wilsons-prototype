@@ -253,6 +253,43 @@ footer .cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:r
 footer h5{margin:0 0 10px;font-size:15px;color:#fff}
 footer .cols div a{display:block;padding:3px 0;color:#ddd}
 footer .bot{background:var(--nav);text-align:center;padding:16px;font-size:12px;color:#aaa}
+/* ===== Customization ===== */
+.cust{border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:14px;background:#fbfcfb}
+.cust h3{margin:0;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cust .mode{font-size:12px;font-weight:700;border-radius:20px;padding:3px 10px;background:var(--brand-soft);color:var(--brand)}
+.cust .mode.req{background:#fff4e5;color:#8a4b00}
+.cg{display:flex;flex-direction:column;gap:8px}
+.cg .lbl{font-size:13px;font-weight:600}
+.cg .lbl span{font-weight:400;color:var(--muted)}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}
+.chips2 button{border:1px solid #c8cccc;background:#fff;border-radius:8px;padding:8px 12px;font-size:13px;text-align:left;line-height:1.25;transition:all .12s}
+.chips2 button:hover{border-color:#888}
+.chips2 button[aria-pressed=true]{border:2px solid var(--orange);padding:7px 11px;box-shadow:0 0 0 2px rgba(255,164,28,.2)}
+.chips2 button small{display:block;color:var(--ok);font-size:11px;font-weight:600}
+.swatch2{display:flex;flex-wrap:wrap;gap:10px}
+.swatch2 button{width:40px;height:40px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px #c8cccc;padding:0;position:relative;transition:transform .12s}
+.swatch2 button:hover{transform:scale(1.08)}
+.swatch2 button[aria-pressed=true]{box-shadow:0 0 0 2px var(--orange)}
+.swatch2 button .dot{position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2px solid #fff}
+.cust input[type=text]{border:1px solid #c8cccc;border-radius:8px;padding:8px 10px;font:inherit;font-size:13px}
+.addons{display:flex;flex-direction:column;gap:6px}
+.addons label{display:flex;gap:8px;align-items:flex-start;font-size:13px;cursor:pointer}
+.addons input{accent-color:var(--brand);margin-top:2px}
+.fineprint{font-size:12px;color:var(--muted);line-height:1.45}
+.notice{border:1px solid #f0c36d;background:#fff8e6;border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.5;color:#5c3d00}
+.notice b{color:#3d2800}
+.notice ul{margin:6px 0 0;padding-left:18px}
+.creq{display:inline-flex;align-items:center;gap:4px;background:#fff4e5;color:#8a4b00;border:1px solid #f0c36d;border-radius:4px;font-size:11px;font-weight:700;padding:2px 6px}
+.ci .opts{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
+.ack{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;cursor:pointer}
+.ack input{width:18px;height:18px;accent-color:var(--brand);margin-top:1px;flex-shrink:0}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:none}
+.co{padding:22px;display:flex;flex-direction:column;gap:14px}
+.co h2{margin:0;font-size:22px}
+.co .line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.co .line .nm{font-weight:600}
+.slide .swatchrow{display:flex;gap:10px;margin:0 0 18px}
+.slide .swatchrow i{width:30px;height:30px;border-radius:50%;border:3px solid rgba(255,255,255,.85);box-shadow:0 4px 10px rgba(0,0,0,.25)}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes pop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
@@ -393,6 +430,27 @@ window.PRODUCTS = [
   "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/sofas/flexsteel/353531",
   "photo_note": "Shown in several of the available covers. Ask about the cover on our floor.",
   "color_family": "Brown",
+  "custom": {
+   "groups": [
+    {
+     "name": "Upholstery",
+     "type": "chips",
+     "options": [
+      "Floor model cover",
+      "Fabric (choose from Flexsteel's fabric line)",
+      "Leather (choose from Flexsteel's leather line)"
+     ],
+     "default": 0
+    },
+    {
+     "name": "Cover name or number",
+     "type": "text",
+     "placeholder": "Optional, e.g. from a swatch you saw in the showroom"
+    }
+   ],
+   "kind": "upholstery",
+   "source": "Flexsteel: offered in leather or fabric"
+  },
   "item_id": "000001760910",
   "mfr_sku": "3535-31 665-70",
   "vendor": "FLEXSTEEL",
@@ -490,6 +548,27 @@ window.PRODUCTS = [
   ],
   "source": "https://www.flexsteel.com/products/b3865-50l",
   "color_family": "Beige / Tan",
+  "custom": {
+   "groups": [
+    {
+     "name": "Upholstery",
+     "type": "chips",
+     "options": [
+      "Floor model cover",
+      "Fabric (choose from Flexsteel's fabric line)",
+      "Leather (choose from Flexsteel's leather line)"
+     ],
+     "default": 0
+    },
+    {
+     "name": "Cover name or number",
+     "type": "text",
+     "placeholder": "Optional, e.g. from a swatch you saw in the showroom"
+    }
+   ],
+   "kind": "upholstery",
+   "source": "Flexsteel: offered in leather or fabric"
+  },
   "item_id": "000001766910",
   "mfr_sku": "B3865-50L 824-82",
   "vendor": "FLEXSTEEL",
@@ -538,6 +617,31 @@ window.PRODUCTS = [
   ],
   "source": "https://parker-house.com/products/phoenix-autumn-black-power-zero-gravity-recliner-with-immersive-audio",
   "color_family": "Black",
+  "custom": {
+   "groups": [
+    {
+     "name": "Cover",
+     "type": "swatch",
+     "options": [
+      [
+       "Autumn Black",
+       "#1e1e1e"
+      ],
+      [
+       "Autumn Caramel",
+       "#a8703f"
+      ],
+      [
+       "Cabot Ebony",
+       "#2a2622"
+      ]
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "upholstery",
+   "source": "Parker House product pages"
+  },
   "item_id": "000001768990",
   "mfr_sku": "MPHX#812P3ZIA-ATBK",
   "vendor": "PARKER HOUSE MFG CO INC",
@@ -586,6 +690,55 @@ window.PRODUCTS = [
   ],
   "source": "https://parker-house.com/products/sbar-912s-vgwk",
   "color_family": "Brown",
+  "custom": {
+   "groups": [
+    {
+     "name": "Cover",
+     "type": "swatch",
+     "options": [
+      [
+       "Vintage Whiskey",
+       "#9a5a2e"
+      ],
+      [
+       "Vintage Caramel",
+       "#b07a45"
+      ],
+      [
+       "Vintage Brown",
+       "#6b4a33"
+      ],
+      [
+       "Vintage Navy",
+       "#2f3b55"
+      ],
+      [
+       "Vintage Onyx",
+       "#262626"
+      ],
+      [
+       "Vintage Slate",
+       "#6e7378"
+      ],
+      [
+       "Lyric Sage",
+       "#9aa58a"
+      ],
+      [
+       "Snow",
+       "#f2f0ea"
+      ],
+      [
+       "Steamboat Ice",
+       "#d9dde0"
+      ]
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "upholstery",
+   "source": "Parker House product page: 'Also available in'"
+  },
   "item_id": "000001751700",
   "mfr_sku": "SBAR #912 S-VGWK",
   "vendor": "PARKER HOUSE MFG CO INC",
@@ -809,6 +962,21 @@ window.PRODUCTS = [
   ],
   "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/bar-stools/sunny-designs/1624AGB30",
   "color_family": "Grey",
+  "custom": {
+   "groups": [
+    {
+     "name": "Height",
+     "type": "chips",
+     "options": [
+      "30\" bar height",
+      "24\" counter height"
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "furniture",
+   "source": "Store website: matching 24\" stool"
+  },
   "item_id": "000001731830",
   "mfr_sku": "1624AG-B30",
   "vendor": "SUNNY DESIGN INC",
@@ -1451,6 +1619,35 @@ window.PRODUCTS = [
   ],
   "source": "https://aireloom.com/product/streamline-firm/",
   "color_family": null,
+  "custom": {
+   "groups": [
+    {
+     "name": "Size",
+     "type": "chips",
+     "options": [
+      "Twin",
+      "Twin XL",
+      "Full",
+      "Queen",
+      "King",
+      "Cal King"
+     ],
+     "default": 3
+    },
+    {
+     "name": "Comfort",
+     "type": "chips",
+     "options": [
+      "Firm",
+      "Luxury Firm",
+      "Extra Firm"
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "mattress",
+   "source": "aireloom.com Streamline"
+  },
   "item_id": "000001771500",
   "mfr_sku": "9424179",
   "vendor": "AIRELOOM",
@@ -1496,6 +1693,35 @@ window.PRODUCTS = [
   ],
   "source": "https://aireloom.com/product/streamline-luxury-firm/",
   "color_family": null,
+  "custom": {
+   "groups": [
+    {
+     "name": "Size",
+     "type": "chips",
+     "options": [
+      "Twin",
+      "Twin XL",
+      "Full",
+      "Queen",
+      "King",
+      "Cal King"
+     ],
+     "default": 4
+    },
+    {
+     "name": "Comfort",
+     "type": "chips",
+     "options": [
+      "Luxury Firm",
+      "Firm",
+      "Extra Firm"
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "mattress",
+   "source": "aireloom.com Streamline"
+  },
   "item_id": "000001768230",
   "mfr_sku": "9424196",
   "vendor": "AIRELOOM",
@@ -1542,6 +1768,44 @@ window.PRODUCTS = [
   ],
   "source": "https://brooklynbedding.com/products/signature-hybrid",
   "color_family": null,
+  "custom": {
+   "groups": [
+    {
+     "name": "Size",
+     "type": "chips",
+     "options": [
+      "Twin",
+      "Twin XL",
+      "Full",
+      "Queen",
+      "King",
+      "Cal King"
+     ],
+     "default": 3
+    },
+    {
+     "name": "Comfort",
+     "type": "chips",
+     "options": [
+      "Soft",
+      "Medium",
+      "Firm"
+     ],
+     "default": 0
+    },
+    {
+     "name": "Pillow top",
+     "type": "chips",
+     "options": [
+      "No pillow top",
+      "Cloud Cooling Pillow Top"
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "mattress",
+   "source": "brooklynbedding.com Signature Hybrid"
+  },
   "item_id": "000001774570",
   "mfr_sku": "BBS13S50-Q-SOFT SIGN MATT",
   "vendor": "BROOKLYN BEDDING",
@@ -1586,6 +1850,24 @@ window.PRODUCTS = [
   ],
   "source": "https://www.beautyrest.com/products/black-mattress-series-four",
   "color_family": null,
+  "custom": {
+   "groups": [
+    {
+     "name": "Size",
+     "type": "chips",
+     "options": [
+      "Twin XL",
+      "Full",
+      "Queen",
+      "King",
+      "Cal King"
+     ],
+     "default": 0
+    }
+   ],
+   "kind": "mattress",
+   "source": "beautyrest.com Black Series Four"
+  },
   "item_id": "000001779320",
   "mfr_sku": "700813279-1020",
   "vendor": "SIMMONS COMPANY",
@@ -1632,6 +1914,24 @@ window.PRODUCTS = [
   ],
   "source": "https://www.beautyrest.com/products/baselogic-silver-base-bed-frame",
   "color_family": null,
+  "custom": {
+   "groups": [
+    {
+     "name": "Size",
+     "type": "chips",
+     "options": [
+      "Twin",
+      "Twin XL",
+      "Full",
+      "Queen",
+      "King"
+     ],
+     "default": 3
+    }
+   ],
+   "kind": "base",
+   "source": "beautyrest.com baselogic Silver"
+  },
   "item_id": "000001761820",
   "mfr_sku": "500833419-7550",
   "vendor": "SIMMONS COMPANY",
@@ -1672,7 +1972,8 @@ P.forEach(p => {
   p.sz = p.size || (p.dims?.w ? (p.dims.w < 30 ? 'Under 30" wide' : p.dims.w <= 60 ? '30" to 60" wide' : 'Over 60" wide') : null);
   p.band = BANDS.find(b => p.price >= b[1] && p.price < b[2])[0];
   p.floor = (p.stock['Redmond Showroom'] || 0) > 0;
-  p.hay = [p.name,p.brand,p.type,p.dept,p.collection,p.color,p.material,p.style,p.comfort,p.size,p.description,(p.features||[]).join(' '),p.mfr_sku,p.item_id.replace(/^0+/,'')].join(' ').toLowerCase();
+  p.customizable = !!p.custom;
+  p.hay = [p.name,p.brand,p.type,p.dept,p.collection,p.color,p.material,p.style,p.comfort,p.size,p.description,(p.features||[]).join(' '),p.mfr_sku,p.item_id.replace(/^0+/,''),p.custom?'customizable custom customize options covers made to order':''].join(' ').toLowerCase();
 });
 const FACETS = [
   {k:'dept',l:'Department',g:p=>[p.dept],o:DEPTS},
@@ -1684,11 +1985,11 @@ const FACETS = [
   {k:'material',l:'Material',g:p=>p.material?[p.material]:[]},
   {k:'style',l:'Style',g:p=>p.style?[p.style]:[]},
   {k:'brand',l:'Brand',g:p=>[p.brand]},
-  {k:'avail',l:'Availability',g:p=>(p.qty>0?['In stock']:[]).concat(p.floor?['See it in the showroom']:[])},
+  {k:'avail',l:'Availability',g:p=>(p.qty>0?['In stock']:[]).concat(p.floor?['See it in the showroom']:[]).concat(p.custom?['Customizable']:[]),o:['In stock','See it in the showroom','Customizable']},
 ];
 
 // ---------- State ----------
-let cart = store.get('cart', {}), wish = store.get('wish', []), recent = store.get('recent', []), zip = store.get('zip', '97756');
+let cart = store.get('cart2', []); if (!Array.isArray(cart)) cart = []; let wish = store.get('wish', []), recent = store.get('recent', []), zip = store.get('zip', '97756');
 const byId = id => P.find(p => p.id === id);
 const local = () => /^97[67]/.test(zip);
 function hashState(){ const [path, qs=''] = location.hash.slice(1).split('?'); return {path: path || '/', params: new URLSearchParams(qs)}; }
@@ -1707,7 +2008,8 @@ function stock(p, long){
   return long ? s : s + (p.floor ? ` <span class="deliv">· on display</span>` : '');
 }
 function deliv(p){ return local() ? `<span class="deliv">${I.truck.replace('class="ico"','class="ico" style="width:16px;height:16px;vertical-align:-3px"')} <b>Local delivery &amp; setup</b> or pickup in Redmond</span>` : `<span class="deliv">Ships by freight to <b>${esc(zip)}</b> · quote at checkout</span>`; }
-function tags(p){ const t = []; if (p.floor) t.push('<span class="badge">On the floor</span>'); if (p.qty === 1) t.push('<span class="badge red">Last one</span>'); return t.join(''); }
+function optCount(p){ return p.custom ? p.custom.groups.reduce((n, g) => n + (g.options ? g.options.length : 0), 0) : 0; }
+function tags(p){ const t = []; if (p.floor) t.push('<span class="badge">On the floor</span>'); if (p.custom) t.push('<span class="badge gold">Customizable</span>'); if (p.qty === 1) t.push('<span class="badge red">Last one</span>'); return t.join(''); }
 function card(p){
   const alt = p.images[1];
   return `<article class="pc">
@@ -1724,7 +2026,7 @@ function card(p){
       <div class="mt">${esc([p.type, p.size || (p.dims?.w ? p.dims.w+'"W' : ''), p.color].filter(Boolean).join(' · '))}</div>
       <div>${price(p.price)}</div>
       <div style="font-size:13px">${stock(p)}</div>
-      ${deliv(p)}
+      ${p.custom ? `<span class="deliv">Customizable: ${esc(p.custom.groups.filter(g=>g.options).map(g=>`${g.options.length} ${g.name.toLowerCase()} options`).join(', '))}</span>` : deliv(p)}
       <button class="add" onclick="addCart('${p.id}',1)">Add to cart</button>
     </div></article>`;
 }
@@ -1743,6 +2045,8 @@ let heroTimer;
 function home(){
   const pick = ids => ids.map(byId).filter(Boolean);
   const slides = [
+    {h:'Make it yours.', p:'Choose the cover, size and comfort on our best-selling recliners, chairs and mattresses. Pick it online, and a Wilson\'s associate confirms every detail with you before we order.', bg:'linear-gradient(115deg,#2b1d14 0%,#5b3b26 55%,#8a5a36 100%)', ids:['1751700','1768990'], link:'/search?avail=Customizable',
+      sw:['#9a5a2e','#2f3b55','#9aa58a','#f2f0ea','#6e7378','#a8703f']},
     {h:'Sink in. Stretch out.', p:'Power recliners and sofas with zero-gravity comfort, on our Redmond floor today.', bg:'linear-gradient(115deg,#121a17 0%,#335749 70%,#4d7a68 100%)', ids:['1777700','1768990'], link:'/search?dept=Living%20Room'},
     {h:'Better sleep starts here.', p:'Aireloom, Beautyrest and Brooklyn Bedding. Lie down on them in the showroom.', bg:'linear-gradient(115deg,#141c2b 0%,#26406a 70%,#3b5f96 100%)', ids:['1771500','1774570'], link:'/search?dept=Mattresses'},
     {h:'Gather around.', p:'Solid-wood dining tables, chairs and bar stools ready for local delivery.', bg:'linear-gradient(115deg,#2a1a12 0%,#6b4329 70%,#8d5f3f 100%)', ids:['1752290','1615930'], link:'/search?dept=Dining'},
@@ -1751,7 +2055,7 @@ function home(){
   const inDept = d => P.filter(p => p.dept === d);
   app.innerHTML = `
     <section class="hero">
-      ${slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background:${s.bg}"><div><h1>${s.h}</h1><p>${s.p}</p><a class="pill-btn" href="#${s.link}">Shop now ${I.r}</a></div><div class="imgs">${pick(s.ids).map(p=>`<img src="${img(p.images[0],600)}" alt="">`).join('')}</div></div>`).join('')}
+      ${slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background:${s.bg}"><div><h1>${s.h}</h1><p>${s.p}</p>${s.sw?`<div class="swatchrow">${s.sw.map(c=>`<i style="background:${c}"></i>`).join('')}</div>`:''}<a class="pill-btn" href="#${s.link}">${s.sw?'Shop customizable':'Shop now'} ${I.r}</a></div><div class="imgs">${pick(s.ids).map(p=>`<img src="${img(p.images[0],600)}" alt="">`).join('')}</div></div>`).join('')}
       <button class="hero-arrow l" aria-label="Previous">${I.l}</button><button class="hero-arrow r" aria-label="Next">${I.r}</button>
       <div class="dots">${slides.map((_,i)=>`<button class="${i?'':'on'}" aria-label="Slide ${i+1}"></button>`).join('')}</div>
     </section>
@@ -1866,16 +2170,18 @@ function product(id){
         <dl class="kv">${facts.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
         <hr>
         <div class="about"><h3>About this item</h3><ul>${(p.features||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>
+        ${p.custom ? `<hr>${custHTML(p)}` : ''}
       </div>
       <div class="buy">
-        ${price(p.price, true)}
+        <div id="bpx">${price(p.price, true)}</div>
         ${deliv(p)}
         <button class="zip" onclick="askZip()">Change delivery ZIP (${esc(zip)})</button>
-        <div class="stockline">${stock(p, true)}</div>
+        <div class="stockline" id="bst">${stock(p, true)}</div>
+        <div id="bnote"></div>
         <ul class="locs">${Object.entries(p.stock).map(([l,n])=>`<li><span>${esc(l)}</span><b>${n}</b></li>`).join('')}</ul>
         <label style="font-size:13px">Quantity: <select id="qty">${qtyOpts}</select></label>
-        <button class="btn y" onclick="addCart('${p.id}',+$('#qty').value)">Add to Cart</button>
-        <button class="btn o" onclick="addCart('${p.id}',+$('#qty').value,true)">Buy Now</button>
+        <button class="btn y" id="bAdd" onclick="addFromPage(false)">Add to Cart</button>
+        <button class="btn o" id="bBuy" onclick="addFromPage(true)">Buy Now</button>
         <button class="btn g" onclick="toast('Reserved. A Wilson\\'s associate will call to arrange delivery or pickup (prototype).')">Reserve with deposit</button>
         <button class="btn g ${wish.includes(p.id)?'on':''}" onclick="toggleWish('${p.id}');this.textContent=wish.includes('${p.id}')?'Saved to wishlist':'Add to wishlist'">${wish.includes(p.id)?'Saved to wishlist':'Add to wishlist'}</button>
         <div class="secure">${I.lock} Secure transaction · Sold by Wilson's of Redmond</div>
@@ -1891,7 +2197,10 @@ function product(id){
       <div class="src">Content source: <a href="${esc(p.source)}" target="_blank" rel="noopener">${esc(new URL(p.source).hostname)}</a></div></section>
     ${shelf('Customers also viewed', also)}
     ${recent.length > 1 ? shelf('Your browsing history', recent.filter(x=>x!==id).map(byId).filter(Boolean)) : ''}`;
-  $('#mbar').innerHTML = `<div>${price(p.price)}</div><button class="btn y" onclick="addCart('${p.id}',1)">Add to Cart</button>`;
+  $('#mbar').innerHTML = `<div>${price(p.price)}</div><button class="btn y" id="mAdd" onclick="addFromPage(false)">Add to Cart</button>`;
+  pg = {p, sel: {}, text: '', addons: []};
+  if (p.custom) wireCust(p);
+  refreshCust();
 
   let k = 0; const big = $('#big'), stage = $('#stage');
   const set = n => { k = (n + p.images.length) % p.images.length; big.src = img(p.images[k],1200); $('#ct').textContent = `${k+1} / ${p.images.length}`; $$('.th button').forEach(b => b.classList.toggle('on', +b.dataset.i === k)); };
@@ -1918,21 +2227,129 @@ function quick(id){
   open('#qvM');
 }
 
-// ---------- Cart / wishlist ----------
-function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
-function syncBadges(){ $('#cartN').textContent = cartCount(); $('#wlN').textContent = wish.length; }
-function addCart(id, n, buyNow){ const p = byId(id); cart[id] = Math.min((cart[id]||0) + n, Math.max(p.qty,1)); store.set('cart', cart); syncBadges();
-  if (buyNow) return checkout(); renderCart(); open('#cartD'); }
-function setQty(id, n){ const p = byId(id); if (n <= 0) delete cart[id]; else cart[id] = Math.min(n, Math.max(p.qty,1)); store.set('cart', cart); syncBadges(); renderCart(); }
-function renderCart(){
-  const ids = Object.keys(cart), sub = ids.reduce((s,id) => s + byId(id).price * cart[id], 0);
-  $('#cartBody').innerHTML = ids.length ? ids.map(id => { const p = byId(id); return `<div class="ci"><img src="${img(p.images[0],200)}" alt=""><div>
-      <div class="nm">${esc(p.name)}</div><div style="font-size:13px;margin:2px 0">${stock(p,true)}</div>${price(p.price)}
-      <div><span class="stepper"><button onclick="setQty('${id}',${cart[id]-1})" aria-label="Less">${cart[id]===1?'🗑':'−'}</button><span>${cart[id]}</span><button onclick="setQty('${id}',${cart[id]+1})" aria-label="More">+</button></span></div></div></div>`; }).join('')
-    : `<div style="text-align:center;padding:40px 0;color:var(--muted)"><h3 style="color:var(--ink)">Your cart is empty</h3><a href="#/search" onclick="closeAll()" style="color:var(--brand-2);font-weight:600">Shop today's in-stock items</a></div>`;
-  $('#cartFoot').innerHTML = ids.length ? `<div style="font-size:18px">Subtotal (${cartCount()} item${cartCount()>1?'s':''}): <b>${money(sub)}</b></div><div class="deliv">Delivery &amp; tax calculated at checkout</div><button class="btn y" onclick="checkout()">Proceed to checkout</button>` : '';
+// ---------- Customization ----------
+const ADDONS = {
+  upholstery: ['White-glove delivery & setup', 'Haul away my old furniture', 'Furniture protection plan', 'Send me free fabric/leather swatches'],
+  furniture: ['White-glove delivery & setup', 'Haul away my old furniture', 'Furniture protection plan'],
+  mattress: ['White-glove delivery & setup', 'Haul away my old mattress', 'Add a mattress protector'],
+  base: ['White-glove delivery & setup', 'Haul away my old bed frame'],
+};
+let pg = null;
+function custHTML(p){
+  const groups = p.custom.groups.map((g, gi) => {
+    if (g.type === 'text') return `<div class="cg"><label class="lbl" for="ctext">${esc(g.name)} <span>(optional)</span></label><input type="text" id="ctext" placeholder="${esc(g.placeholder || '')}"></div>`;
+    if (g.type === 'swatch') return `<div class="cg"><div class="lbl">${esc(g.name)}: <span id="cv${gi}">${esc(g.options[g.default][0])}</span></div>
+      <div class="swatch2" role="group" aria-label="${esc(g.name)}">${g.options.map((o, oi) => `<button type="button" data-g="${gi}" data-o="${oi}" aria-pressed="${oi === g.default}" title="${esc(o[0])}${oi === g.default ? ' (in stock)' : ''}" aria-label="${esc(o[0])}" style="background:${o[1]}">${oi === g.default ? '<span class="dot"></span>' : ''}</button>`).join('')}</div>
+      <div class="fineprint">Green dot = the version in stock now. On-screen colors are approximate.</div></div>`;
+    return `<div class="cg"><div class="lbl">${esc(g.name)}</div><div class="chips2" role="group" aria-label="${esc(g.name)}">${g.options.map((o, oi) => `<button type="button" data-g="${gi}" data-o="${oi}" aria-pressed="${oi === g.default}">${esc(o)}${oi === g.default ? '<small>In stock</small>' : ''}</button>`).join('')}</div></div>`;
+  }).join('');
+  const addons = (ADDONS[p.custom.kind] || ADDONS.furniture).map((a, i) => `<label><input type="checkbox" data-a="${i}"> ${esc(a)}</label>`).join('');
+  return `<section class="cust" aria-label="Customize">
+    <h3>Customize it <span class="mode" id="cmode">In-stock version</span></h3>
+    ${groups}
+    <div class="cg"><div class="lbl">Add-ons <span>(priced by your associate)</span></div><div class="addons">${addons}</div></div>
+    <div class="fineprint">Choosing anything other than the in-stock version sends a <b>customization request</b>. Final details, option availability, pricing and delivery dates are subject to change. A Wilson's sales associate will confirm everything with you before your order is finalized. Option source: ${esc(p.custom.source)}.</div>
+  </section>`;
 }
-function checkout(){ closeAll(); toast('Checkout would hand off to Shopify here (prototype).'); }
+function wireCust(p){
+  $$('.cust [data-g]').forEach(b => b.onclick = () => {
+    const gi = +b.dataset.g, oi = +b.dataset.o; pg.sel[gi] = oi;
+    $$(`.cust [data-g="${gi}"]`).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+    const lbl = $(`#cv${gi}`); if (lbl) lbl.textContent = p.custom.groups[gi].options[oi][0];
+    refreshCust(); });
+  const t = $('#ctext'); if (t) t.oninput = () => { pg.text = t.value.trim(); refreshCust(); };
+  $$('.cust [data-a]').forEach(c => c.onchange = () => { pg.addons = $$('.cust [data-a]').filter(x => x.checked).map(x => (ADDONS[p.custom.kind] || ADDONS.furniture)[+x.dataset.a]); });
+}
+function choiceList(){
+  const p = pg.p; if (!p.custom) return [];
+  const out = [];
+  p.custom.groups.forEach((g, gi) => {
+    if (g.type === 'text') { if (pg.text) out.push({k: g.name, v: pg.text, changed: true}); return; }
+    const oi = pg.sel[gi] ?? g.default, o = g.options[oi];
+    out.push({k: g.name, v: Array.isArray(o) ? o[0] : o, changed: oi !== g.default});
+  });
+  return out;
+}
+function isCustom(){ return choiceList().some(c => c.changed); }
+function refreshCust(){
+  if (!pg) return; const p = pg.p, c = isCustom();
+  const m = $('#cmode'); if (m) { m.textContent = c ? 'Customization request' : 'In-stock version'; m.classList.toggle('req', c); }
+  $('#bst').innerHTML = c ? '<span class="low" style="color:#8a4b00">Made to order</span>' : stock(p, true);
+  const locs = $('.buy .locs'); if (locs) locs.hidden = c;
+  $('#bpx').innerHTML = c ? `<div class="deliv">Starting at</div>${price(p.price, true)}<div class="deliv">Final price confirmed by your associate</div>` : price(p.price, true);
+  $('#bnote').innerHTML = c ? `<div class="notice"><b>Customization request.</b> A Wilson's sales associate will confirm details, option availability, final price and delivery with you before your order is finalized. Delivery dates are estimates and subject to change.</div>` : '';
+  $('#bAdd').textContent = c ? 'Add request to cart' : 'Add to Cart';
+  const mAdd = $('#mAdd'); if (mAdd) mAdd.textContent = c ? 'Add request to cart' : 'Add to Cart';
+  $('#bBuy').textContent = c ? 'Request now' : 'Buy Now';
+}
+function addFromPage(buyNow){
+  const qty = +($('#qty')?.value || 1), ch = pg.p.custom ? choiceList() : [], custom = ch.some(c => c.changed);
+  addCart(pg.p.id, qty, buyNow, {custom, opts: custom ? ch.map(c => `${c.k}: ${c.v}`) : [], addons: [...pg.addons]});
+}
+
+// ---------- Cart / wishlist ----------
+function cartCount(){ return cart.reduce((a, l) => a + l.qty, 0); }
+function syncBadges(){ $('#cartN').textContent = cartCount(); $('#wlN').textContent = wish.length; }
+function saveCart(){ store.set('cart2', cart); syncBadges(); }
+function addCart(id, n, buyNow, line){
+  const p = byId(id), L = line || {custom: false, opts: [], addons: []};
+  const key = id + '|' + JSON.stringify([L.opts, L.addons]);
+  const cap = L.custom ? 20 : Math.max(p.qty, 1);
+  const ex = cart.find(l => l.key === key);
+  if (ex) ex.qty = Math.min(ex.qty + n, cap); else cart.push({key, id, qty: Math.min(n, cap), custom: L.custom, opts: L.opts, addons: L.addons});
+  saveCart(); if (buyNow) return checkout(); renderCart(); open('#cartD');
+}
+function setQty(i, n){ const l = cart[i]; if (!l) return; const p = byId(l.id);
+  if (n <= 0) cart.splice(i, 1); else l.qty = Math.min(n, l.custom ? 20 : Math.max(p.qty, 1)); saveCart(); renderCart(); }
+function lineHTML(l, i, withStepper){
+  const p = byId(l.id), extras = [...l.opts, ...l.addons.map(a => 'Add-on: ' + a)];
+  return `<div class="ci"><img src="${img(p.images[0],200)}" alt=""><div>
+    <div class="nm">${esc(p.name)}</div>
+    ${l.custom ? '<div style="margin:4px 0"><span class="creq">Customization request</span></div>' : `<div style="font-size:13px;margin:2px 0">${stock(p,true)}</div>`}
+    ${extras.length ? `<div class="opts">${extras.map(esc).join('<br>')}</div>` : ''}
+    <div style="margin-top:4px">${l.custom ? '<span class="deliv">Starting at </span>' : ''}${price(p.price)}</div>
+    ${withStepper ? `<div><span class="stepper"><button onclick="setQty(${i},${l.qty-1})" aria-label="Less">${l.qty===1?'🗑':'−'}</button><span>${l.qty}</span><button onclick="setQty(${i},${l.qty+1})" aria-label="More">+</button></span></div>` : `<div class="deliv">Qty ${l.qty}</div>`}
+  </div></div>`;
+}
+const CUSTOM_CART_NOTE = `<div class="notice"><b>Your cart includes a customization request.</b> Final details, option availability, pricing and delivery dates are subject to change. A Wilson's sales associate will confirm everything with you before your order is finalized.</div>`;
+function renderCart(){
+  const sub = cart.reduce((s, l) => s + byId(l.id).price * l.qty, 0), anyC = cart.some(l => l.custom);
+  $('#cartBody').innerHTML = cart.length ? cart.map((l, i) => lineHTML(l, i, true)).join('')
+    : `<div style="text-align:center;padding:40px 0;color:var(--muted)"><h3 style="color:var(--ink)">Your cart is empty</h3><a href="#/search" onclick="closeAll()" style="color:var(--brand-2);font-weight:600">Shop today's in-stock items</a></div>`;
+  $('#cartFoot').innerHTML = cart.length ? `${anyC ? CUSTOM_CART_NOTE : ''}
+    <div style="font-size:18px">Subtotal (${cartCount()} item${cartCount()>1?'s':''}): <b>${money(sub)}</b>${anyC ? '<div class="deliv">Customized items shown at their starting price</div>' : ''}</div>
+    <div class="deliv">Delivery &amp; tax calculated at checkout</div><button class="btn y" onclick="checkout()">Proceed to checkout</button>` : '';
+}
+function checkout(){
+  closeAll(); if (!cart.length) return;
+  const sub = cart.reduce((s, l) => s + byId(l.id).price * l.qty, 0), anyC = cart.some(l => l.custom);
+  $('#qvM').innerHTML = `<div class="co">
+    <div style="display:flex;justify-content:space-between;align-items:center"><h2>Review your order</h2><button class="x" onclick="closeAll()" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    ${anyC ? `<div class="notice" role="alert"><b>Your order includes a customization request.</b>
+      <ul>
+        <li>Customized items are a <b>request</b>, not a final order.</li>
+        <li>Final details, option availability and pricing are subject to change. Prices shown are starting prices.</li>
+        <li>A Wilson's sales associate will contact you to review and confirm every detail before your order is finalized. Nothing custom is ordered until you approve it.</li>
+        <li>Delivery dates are estimates and subject to change. Made-to-order items take longer than in-stock items.</li>
+        <li>Your associate will explain the policy for changes and returns on custom orders.</li>
+      </ul></div>` : ''}
+    <div>${cart.map((l, i) => lineHTML(l, i, false)).join('')}</div>
+    <div class="line"><span>Subtotal${anyC ? ' (customized items at starting price)' : ''}</span><b>${money(sub)}</b></div>
+    <div class="deliv">Delivery, setup and tax are added at checkout. Delivery dates are estimates and subject to change.</div>
+    ${anyC ? `<label class="ack"><input type="checkbox" id="ack"> I understand my customization is a request, and that final details, availability, pricing and delivery dates will be confirmed by a Wilson's associate before my order is finalized.</label>` : ''}
+    <button class="btn y" id="placeBtn" ${anyC ? 'disabled' : ''}>${anyC ? 'Place order & send customization request' : 'Place order'}</button>
+    <div class="secure">${I.lock} Payment would be handled securely by Shopify (prototype: nothing is charged)</div>
+  </div>`;
+  open('#qvM');
+  const ack = $('#ack'); if (ack) ack.onchange = () => { $('#placeBtn').disabled = !ack.checked; };
+  $('#placeBtn').onclick = () => {
+    $('#qvM').innerHTML = `<div class="co" style="text-align:center;padding:36px"><h2>Thank you!</h2>
+      <p style="margin:0;line-height:1.6">${anyC ? 'Your order and customization request were received. A Wilson\'s associate will contact you to confirm the details, availability, final price and delivery before anything custom is ordered.' : 'Your order was received. We\'ll contact you to schedule delivery or pickup.'}</p>
+      <p class="deliv" style="margin:0">Prototype: no order was placed and nothing was charged.</p>
+      <button class="btn g" onclick="closeAll()" style="max-width:240px;margin:0 auto">Keep shopping</button></div>`;
+    cart = []; saveCart();
+  };
+}
 function toggleWish(id, el){ wish = wish.includes(id) ? wish.filter(x=>x!==id) : [...wish, id]; store.set('wish', wish); syncBadges(); el?.classList.toggle('on', wish.includes(id)); toast(wish.includes(id) ? 'Saved to your wishlist' : 'Removed from wishlist'); }
 function askZip(){ const z = prompt('Enter your ZIP code for delivery options', zip); if (z && /^\d{5}$/.test(z.trim())) { zip = z.trim(); store.set('zip', zip); $('#zipLbl').textContent = (local()?'Central OR ':'') + zip; route(); } }
 
