@@ -1,0 +1,1991 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wilson's of Redmond</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nav:#121a17; --nav2:#1f2b27; --brand:#335749; --brand-2:#2a7a63; --brand-soft:#e9f2ee;
+  --yellow:#ffd814; --yellow-b:#fcd200; --orange:#ffa41c; --orange-b:#ff8f00;
+  --ink:#0f1111; --muted:#565959; --line:#e3e6e6; --bg:#eaeded; --card:#fff; --ok:#007600; --warn:#b12704;
+  --r:12px; --sh:0 1px 3px rgba(15,17,17,.08),0 4px 14px rgba(15,17,17,.06); --sh2:0 12px 32px rgba(15,17,17,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);font-size:14px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+img{display:block;max-width:100%}
+.ico{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* ===== Header ===== */
+.topbar{background:var(--nav);color:#fff;position:sticky;top:0;z-index:50}
+.hdr{display:flex;align-items:center;gap:12px;padding:8px 14px;max-width:1500px;margin:0 auto}
+.logo{background:#fff;border-radius:8px;padding:4px 8px;flex-shrink:0;border:2px solid transparent;transition:border-color .15s}
+.logo:hover,.hbtn:hover{border-color:#fff}
+.logo img{height:36px;width:auto}
+.hbtn{background:none;border:2px solid transparent;border-radius:6px;padding:4px 8px;display:flex;align-items:center;gap:6px;color:#fff;text-align:left;line-height:1.15;flex-shrink:0}
+.hbtn small{display:block;color:#ccc;font-size:12px}
+.hbtn b{font-size:14px}
+.search{flex:1;display:flex;height:42px;border-radius:8px;overflow:visible;position:relative;min-width:0}
+.search select{border:0;background:#e6e6e6;border-radius:8px 0 0 8px;padding:0 8px;font-size:12px;color:#333;max-width:130px}
+.search input{flex:1;border:0;padding:0 12px;font-size:15px;min-width:0;outline:none}
+.search .go{border:0;background:var(--orange);width:48px;border-radius:0 8px 8px 0;display:grid;place-items:center;color:#111}
+.search:focus-within{box-shadow:0 0 0 3px var(--orange);border-radius:8px}
+.suggest{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;color:var(--ink);border-radius:10px;box-shadow:var(--sh2);display:none;z-index:60;overflow:hidden}
+.suggest.show{display:block;animation:pop .14s ease-out}
+.suggest .s{padding:9px 14px;cursor:pointer;display:flex;gap:12px;align-items:center}
+.suggest .s:hover,.suggest .s.active{background:#f3f6f5}
+.suggest img{width:42px;height:42px;object-fit:contain;border-radius:6px;background:#fff;border:1px solid var(--line)}
+.suggest mark{background:none;font-weight:800;color:var(--ink)}
+.suggest small{color:var(--muted)}
+.cart{position:relative;font-weight:800;font-size:14px;align-items:flex-end}
+.cart .n{position:absolute;top:-2px;left:22px;color:var(--orange);font-size:16px;font-weight:800}
+.subnav{background:var(--nav2);color:#fff}
+.subnav .in{display:flex;gap:2px;align-items:center;max-width:1500px;margin:0 auto;padding:0 10px;overflow-x:auto;scrollbar-width:none}
+.subnav a,.subnav button{background:none;border:1px solid transparent;border-radius:4px;padding:8px 10px;white-space:nowrap;font-weight:500;font-size:14px;color:#fff;display:flex;gap:6px;align-items:center}
+.subnav a:hover,.subnav button:hover,.subnav a.on{border-color:#fff}
+.subnav .promo{margin-left:auto;font-weight:700;color:var(--yellow)}
+
+main{max-width:1500px;margin:0 auto;padding:0 0 60px}
+.wrap{padding:16px 18px}
+
+/* ===== Home ===== */
+.hero{position:relative;height:420px;overflow:hidden}
+.slide{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:30px 70px 110px;opacity:0;transition:opacity .7s ease;color:#fff}
+.slide.on{opacity:1}
+.slide h1{font-size:44px;line-height:1.05;margin:0 0 12px;letter-spacing:-.02em}
+.slide p{font-size:17px;opacity:.9;margin:0 0 20px;max-width:460px}
+.slide .imgs{display:flex;gap:14px;justify-content:center}
+.slide .imgs img{width:46%;aspect-ratio:1;object-fit:contain;background:#fff;border-radius:18px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:rotate(-2deg)}
+.slide .imgs img+img{transform:rotate(3deg) translateY(24px)}
+.pill-btn{background:var(--yellow);border:1px solid var(--yellow-b);border-radius:24px;padding:12px 24px;font-weight:700;color:#111;display:inline-flex;gap:8px;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .15s}
+.pill-btn:hover{transform:translateY(-1px)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:160px;background:linear-gradient(to bottom,rgba(234,237,237,0),var(--bg));pointer-events:none}
+.dots{position:absolute;bottom:120px;left:70px;display:flex;gap:8px;z-index:2}
+.dots button{width:28px;height:4px;border-radius:2px;border:0;background:rgba(255,255,255,.4);padding:0}
+.dots button.on{background:#fff}
+.hero-arrow{position:absolute;top:35%;z-index:3;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:64px;border-radius:8px;display:grid;place-items:center;backdrop-filter:blur(6px)}
+.hero-arrow.l{left:10px}.hero-arrow.r{right:10px}
+.boxes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:0 18px;margin-top:-130px;position:relative;z-index:3}
+.box{background:var(--card);padding:18px 18px 14px;border-radius:var(--r);box-shadow:var(--sh);display:flex;flex-direction:column}
+.box h3{margin:0 0 12px;font-size:20px;letter-spacing:-.01em}
+.box .quad{display:grid;grid-template-columns:1fr 1fr;gap:12px;flex:1}
+.box .quad a{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.box .quad img{aspect-ratio:1;object-fit:contain;background:#fff;border-radius:8px;transition:transform .25s}
+.box .quad a:hover img{transform:scale(1.04)}
+.box .more{margin-top:12px;color:var(--brand-2);font-weight:600;font-size:13px}
+.box .more:hover{text-decoration:underline;color:var(--warn)}
+.shelf{background:var(--card);margin:18px;border-radius:var(--r);box-shadow:var(--sh);padding:18px 18px 10px;position:relative}
+.shelf h2{margin:0 0 12px;font-size:20px;display:flex;align-items:baseline;gap:12px;letter-spacing:-.01em}
+.shelf h2 a{font-size:13px;font-weight:600;color:var(--brand-2)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:16px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:8px}
+.rail::-webkit-scrollbar{display:none}
+.mini{display:flex;flex-direction:column;gap:6px;cursor:pointer}
+.mini .ph{background:#f7f8f8;border-radius:10px;aspect-ratio:1;display:grid;place-items:center;padding:10px;overflow:hidden}
+.mini .ph img{max-height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s}
+.mini:hover .ph img{transform:scale(1.05)}
+.mini .t{font-size:13px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rail-btn{position:absolute;top:50%;width:42px;height:90px;border:1px solid var(--line);background:rgba(255,255,255,.95);border-radius:8px;box-shadow:var(--sh);display:grid;place-items:center;z-index:2;opacity:0;transition:opacity .2s}
+.shelf:hover .rail-btn{opacity:1}
+.rail-btn.l{left:6px}.rail-btn.r{right:6px}
+.brands{display:flex;flex-wrap:wrap;gap:10px}
+.brands a{background:#f3f6f5;border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-weight:600;transition:all .15s}
+.brands a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* ===== Price / stock bits ===== */
+.price{display:inline-flex;align-items:flex-start;font-weight:500;line-height:1;color:var(--ink)}
+.price .s{font-size:12px;margin-top:2px}
+.price .d{font-size:26px}
+.price .c{font-size:12px;margin-top:2px}
+.price.lg .d{font-size:32px}
+.instock{color:var(--ok);font-weight:600}
+.low{color:var(--warn);font-weight:600}
+.badge{display:inline-flex;align-items:center;gap:4px;background:var(--brand);color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:3px 7px;letter-spacing:.02em}
+.badge.gold{background:#232f3e}
+.badge.red{background:#cc0c39}
+.deliv{font-size:13px;color:var(--muted)}
+.deliv b{color:var(--ink)}
+
+/* ===== Results ===== */
+.res-top{background:var(--card);box-shadow:0 1px 0 var(--line);padding:10px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.res-top .count{font-size:14px}
+.res-top .count b{color:var(--warn)}
+.sort{border:1px solid #d5d9d9;border-radius:8px;padding:6px 10px;background:#f0f2f2;box-shadow:0 2px 5px rgba(15,17,17,.08);font-size:13px}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:18px;padding:16px 18px}
+.rail-f{background:var(--card);border-radius:var(--r);padding:4px 16px 16px;align-self:start;position:sticky;top:110px;max-height:calc(100vh - 124px);overflow:auto;box-shadow:var(--sh)}
+.fg{padding:12px 0;border-bottom:1px solid var(--line)}
+.fg:last-child{border:0}
+.fg h4{margin:0 0 8px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.fg h4 button{border:0;background:none;color:var(--brand-2);font-size:12px;font-weight:600}
+.opt{display:flex;align-items:center;gap:8px;padding:4px 0;cursor:pointer;font-size:14px;user-select:none}
+.opt input{accent-color:var(--brand);width:16px;height:16px}
+.opt .n{margin-left:auto;color:var(--muted);font-size:12px}
+.opt.zero{opacity:.38;pointer-events:none}
+.sw-row{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:32px;height:32px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #c8cccc;transition:transform .12s}
+.sw:hover{transform:scale(1.1)}
+.sw.on{box-shadow:0 0 0 2px var(--orange)}
+.sw.zero{opacity:.25;pointer-events:none}
+.pr-in{display:flex;gap:6px;margin-top:8px}
+.pr-in input{width:100%;border:1px solid #c8cccc;border-radius:8px;padding:7px 8px;font-size:13px}
+.pr-in button{border:1px solid #c8cccc;background:#fff;border-radius:8px;padding:0 12px;font-weight:600}
+.range{position:relative;height:4px;background:#ddd;border-radius:2px;margin:14px 6px 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #c8cccc;border-radius:20px;padding:5px 10px 5px 12px;font-size:13px;font-weight:500;transition:all .12s}
+.chip:hover{border-color:var(--warn);color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.pc{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:box-shadow .2s, transform .2s;box-shadow:0 0 0 1px var(--line);animation:fade .35s ease both}
+.pc:hover{box-shadow:var(--sh2);transform:translateY(-3px)}
+.pc .ph{background:#f7f8f8;aspect-ratio:1;position:relative;overflow:hidden;cursor:pointer}
+.pc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px;mix-blend-mode:multiply;transition:opacity .35s, transform .5s}
+.pc .ph img.alt{opacity:0}
+.pc:hover .ph img.alt{opacity:1}
+.pc:hover .ph img.main.has-alt{opacity:0}
+.pc:hover .ph img{transform:scale(1.03)}
+.pc .tags{position:absolute;top:10px;left:10px;display:flex;gap:6px;z-index:2}
+.heart{position:absolute;top:10px;right:10px;z-index:2;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.9);box-shadow:var(--sh);display:grid;place-items:center;transition:transform .15s}
+.heart:hover{transform:scale(1.1)}
+.heart.on svg{fill:#cc0c39;stroke:#cc0c39}
+.qv{position:absolute;left:50%;bottom:12px;transform:translate(-50%,10px);opacity:0;background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;font-size:13px;box-shadow:var(--sh);transition:all .2s;z-index:2;white-space:nowrap}
+.pc:hover .qv{opacity:1;transform:translate(-50%,0)}
+.pc .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pc .br{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.pc .nm{font-size:15px;font-weight:600;line-height:1.3;cursor:pointer;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc .nm:hover{color:var(--warn)}
+.pc .mt{font-size:13px;color:var(--muted)}
+.pc .add{margin-top:auto;background:var(--yellow);border:1px solid var(--yellow-b);border-radius:20px;padding:8px;font-weight:600;font-size:13px;transition:background .15s}
+.pc .add:hover{background:#f7ca00}
+.empty{background:var(--card);border-radius:var(--r);padding:50px;text-align:center;color:var(--muted);box-shadow:var(--sh)}
+.ftoggle{display:none}
+
+/* ===== Product page ===== */
+.crumb{font-size:12px;color:var(--muted);padding:12px 18px 0}
+.crumb a:hover{text-decoration:underline;color:var(--warn)}
+.pdp{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 300px;gap:28px;padding:12px 18px 0;align-items:start}
+.gal{display:grid;grid-template-columns:64px minmax(0,1fr);gap:12px;position:sticky;top:110px}
+.th{display:flex;flex-direction:column;gap:8px}
+.th button{border:1px solid #c8cccc;border-radius:8px;background:#fff;padding:3px;aspect-ratio:1;transition:all .12s}
+.th button.on,.th button:hover{border-color:var(--orange);box-shadow:0 0 0 2px rgba(255,164,28,.35)}
+.th img{width:100%;height:100%;object-fit:contain}
+.stage{background:#fff;border-radius:var(--r);aspect-ratio:1;position:relative;overflow:hidden;cursor:zoom-in;box-shadow:0 0 0 1px var(--line)}
+.stage img{width:100%;height:100%;object-fit:contain;padding:20px;transition:transform .15s ease-out;transform-origin:center}
+.stage.zoom img{transform:scale(2.1)}
+.stage .ct{position:absolute;bottom:12px;right:12px;background:rgba(15,17,17,.7);color:#fff;font-size:12px;border-radius:12px;padding:3px 9px}
+.stage .ar{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.95);display:grid;place-items:center;box-shadow:var(--sh);opacity:0;transition:opacity .2s}
+.stage:hover .ar{opacity:1}
+.stage .ar.l{left:12px}.stage .ar.r{right:12px}
+.info h1{font-size:24px;line-height:1.25;font-weight:600;margin:4px 0 6px;letter-spacing:-.01em}
+.info .bl{color:var(--brand-2);font-weight:600}
+.info .bl:hover{color:var(--warn);text-decoration:underline}
+.info .ids{font-size:12px;color:var(--muted)}
+.info hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;font-size:14px}
+.kv dt{font-weight:700}
+.kv dd{margin:0}
+.about h3{font-size:16px;margin:0 0 6px}
+.about ul{margin:0;padding-left:18px;line-height:1.6}
+.buy{background:#fff;border:1px solid #d5d9d9;border-radius:var(--r);padding:18px;position:sticky;top:110px;display:flex;flex-direction:column;gap:10px}
+.buy .stockline{font-size:18px}
+.buy select{border:1px solid #d5d9d9;background:#f0f2f2;border-radius:8px;padding:6px 10px;box-shadow:0 2px 5px rgba(15,17,17,.08)}
+.btn{border-radius:24px;padding:10px;font-weight:600;border:1px solid transparent;width:100%;transition:filter .15s, transform .1s}
+.btn:active{transform:scale(.98)}
+.btn:hover{filter:brightness(.96)}
+.btn.y{background:var(--yellow);border-color:var(--yellow-b)}
+.btn.o{background:var(--orange);border-color:var(--orange-b)}
+.btn.g{background:#fff;border-color:#d5d9d9}
+.locs{margin:0;padding:0;list-style:none;font-size:13px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.locs li{display:flex;justify-content:space-between;padding:7px 10px}
+.locs li+li{border-top:1px solid var(--line)}
+.secure{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.zip{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--brand-2);background:none;border:0;padding:0;text-align:left}
+.sec{background:var(--card);margin:22px 18px 0;border-radius:var(--r);padding:22px;box-shadow:var(--sh)}
+.sec h2{margin:0 0 14px;font-size:20px;letter-spacing:-.01em}
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}
+.spec div{display:grid;grid-template-columns:40% 1fr;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.spec div span:first-child{color:var(--muted);font-weight:600}
+.dimrow{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.dim{background:linear-gradient(135deg,var(--brand-soft),#fff);border:1px solid #d6e5de;border-radius:14px;padding:16px 22px;min-width:120px}
+.dim b{display:block;font-size:28px;letter-spacing:-.02em}
+.dim span{font-size:12px;color:var(--muted)}
+.desc{font-size:15px;line-height:1.7;max-width:900px;color:#333}
+.src{font-size:12px;color:var(--muted);margin-top:12px}
+.src a{color:var(--brand-2)}
+.mbar{display:none}
+
+/* ===== Overlays ===== */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s;z-index:80}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;width:min(400px,92vw);background:#fff;z-index:90;transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;box-shadow:var(--sh2)}
+.drawer.right{right:0;transform:translateX(105%)}
+.drawer.left{left:0;transform:translateX(-105%)}
+.drawer.on{transform:none}
+.drawer .dh{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+.drawer .dh.dark{background:var(--nav2);color:#fff;border:0}
+.drawer .dh h3{margin:0;font-size:18px}
+.drawer .db{flex:1;overflow:auto;padding:8px 18px}
+.drawer .df{padding:16px 18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.x{border:0;background:none;padding:4px;display:grid;place-items:center}
+.ci{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ci img{width:80px;height:80px;object-fit:contain;background:#f7f8f8;border-radius:8px}
+.ci .nm{font-weight:600;font-size:14px;line-height:1.3}
+.stepper{display:inline-flex;align-items:center;border:2px solid var(--yellow);border-radius:20px;overflow:hidden;margin-top:6px}
+.stepper button{border:0;background:#fff;width:30px;height:28px;font-weight:700}
+.stepper span{min-width:28px;text-align:center;font-weight:700}
+.menu a{display:flex;justify-content:space-between;padding:13px 4px;border-bottom:1px solid var(--line);font-weight:500}
+.menu a:hover{color:var(--brand-2)}
+.menu h4{margin:16px 4px 4px;font-size:16px}
+.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);opacity:0;pointer-events:none;background:#fff;border-radius:16px;z-index:95;width:min(900px,94vw);max-height:90vh;overflow:auto;box-shadow:var(--sh2);transition:all .25s}
+.modal.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.qvg{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:24px}
+.qvg img{width:100%;aspect-ratio:1;object-fit:contain;background:#f7f8f8;border-radius:12px;padding:16px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,140%);background:#111;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--sh2);transition:transform .3s cubic-bezier(.2,.8,.2,1);z-index:100;display:flex;gap:10px;align-items:center;max-width:92vw}
+.toast.on{transform:translate(-50%,0)}
+.proto{background:#fff8e1;color:#7a5b00;font-size:12px;text-align:center;padding:5px 12px}
+footer{background:var(--nav2);color:#ddd;margin-top:30px}
+footer .top{background:#37475a;text-align:center;padding:14px;font-size:13px;cursor:pointer}
+footer .cols{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 18px;font-size:14px}
+footer h5{margin:0 0 10px;font-size:15px;color:#fff}
+footer .cols div a{display:block;padding:3px 0;color:#ddd}
+footer .bot{background:var(--nav);text-align:center;padding:16px;font-size:12px;color:#aaa}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+@media (max-width:1150px){
+  .pdp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .buy{grid-column:1/-1;position:static}
+  .boxes{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:820px){
+  .hdr{flex-wrap:wrap;gap:8px;padding:8px 12px}
+  .hbtn.hide-m,.search select,.subnav .promo{display:none}
+  .search{order:5;flex-basis:100%;height:44px}
+  .search input{border-radius:8px 0 0 8px}
+  .hdr .spacer{flex:1}
+  .hero{height:auto;min-height:440px}
+  .slide{grid-template-columns:1fr;padding:22px 18px 150px;align-content:start;gap:16px}
+  .slide h1{font-size:30px}
+  .slide p{font-size:15px}
+  .slide .imgs img{width:40%}
+  .dots{left:18px;bottom:150px}
+  .hero-arrow{display:none}
+  .boxes{grid-template-columns:1fr 1fr;gap:10px;padding:0 10px;margin-top:-140px}
+  .box{padding:12px}
+  .box h3{font-size:16px}
+  .shelf{margin:12px 10px}
+  .rail{grid-auto-columns:150px}
+  .layout{grid-template-columns:1fr;padding:12px 10px}
+  .rail-f{position:fixed;inset:0;z-index:85;border-radius:0;max-height:none;display:none}
+  .rail-f.open{display:block;animation:fade .2s}
+  .ftoggle{display:inline-flex;gap:6px;align-items:center;border:1px solid #c8cccc;background:#fff;border-radius:8px;padding:6px 12px;font-weight:600}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .pc .bd{padding:10px}
+  .pc .nm{font-size:14px}
+  .price .d{font-size:21px}
+  .qv{display:none}
+  .pdp{grid-template-columns:minmax(0,1fr);padding:8px 10px 0;gap:16px}
+  .gal{grid-template-columns:minmax(0,1fr);position:static}
+  .th{flex-direction:row;overflow-x:auto;order:2}
+  .th button{width:58px;flex-shrink:0}
+  .sec{margin:14px 10px 0;padding:16px}
+  .spec{grid-template-columns:minmax(0,1fr)}
+  .qvg{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr 1fr}
+  .mbar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -4px 16px rgba(0,0,0,.12);padding:10px 12px;gap:10px;align-items:center;z-index:70}
+  .mbar .btn{flex:1}
+  body.pdp-on{padding-bottom:70px}
+}
+</style>
+</head>
+<body>
+<div class="proto">Prototype · real in-stock items, prices &amp; quantities from the 10/24/2026 inventory export · checkout is simulated</div>
+<header class="topbar">
+  <div class="hdr">
+    <button class="hbtn" id="menuBtn" aria-label="Menu"><svg class="ico" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a class="logo" href="#/" aria-label="Home"><img src="https://cdn.nmg-platform.com/wilsonsmattressgallery/wilsons-logo-new.webp" alt="Wilson's of Redmond"></a>
+    <button class="hbtn hide-m" id="zipBtn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small>Deliver to</small><b id="zipLbl">Redmond 97756</b></span></button>
+    <form class="search" id="sform" autocomplete="off" role="search">
+      <select id="sdept" aria-label="Department"><option value="">All</option></select>
+      <input id="q" type="search" placeholder="Search Wilson's" aria-label="Search">
+      <button class="go" aria-label="Search"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <div class="suggest" id="sug" role="listbox"></div>
+    </form>
+    <span class="spacer"></span>
+    <button class="hbtn hide-m" onclick="toast('Accounts come with the live site (prototype).')"><span><small>Hello, sign in</small><b>Account</b></span></button>
+    <button class="hbtn hide-m" onclick="go('/search', new URLSearchParams({saved:'1'}))"><span><small>Saved</small><b>Wishlist (<span id="wlN">0</span>)</b></span></button>
+    <button class="hbtn cart" id="cartBtn" aria-label="Cart"><svg class="ico" viewBox="0 0 24 24" style="width:34px;height:34px"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg><span class="n" id="cartN">0</span><b>Cart</b></button>
+  </div>
+  <nav class="subnav"><div class="in" id="subnav"></div></nav>
+</header>
+<main id="app"></main>
+<footer>
+  <div class="top" onclick="scrollTo({top:0})">Back to top</div>
+  <div class="cols">
+    <div><h5>Shop</h5><a href="#/search?dept=Living%20Room">Living Room</a><a href="#/search?dept=Bedroom">Bedroom</a><a href="#/search?dept=Dining">Dining</a><a href="#/search?dept=Mattresses">Mattresses</a></div>
+    <div><h5>Visit us</h5><span>2071 S Hwy 97<br>Redmond, OR 97756</span><br><a href="tel:5415482066">541-548-2066</a></div>
+    <div><h5>Services</h5><a>Local delivery &amp; setup</a><a>Special financing</a><a>Special orders</a></div>
+    <div><h5>Wilson's</h5><a>About us · since 1962</a><a>Reviews</a><a>Careers</a></div>
+  </div>
+  <div class="bot">© Wilson's of Redmond · Keepin' It Local Since 1962 · Prototype for internal review</div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer right" id="cartD" aria-label="Cart">
+  <div class="dh"><h3>Shopping Cart</h3><button class="x" onclick="closeAll()" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="db" id="cartBody"></div>
+  <div class="df" id="cartFoot"></div>
+</aside>
+<aside class="drawer left" id="menuD" aria-label="Menu">
+  <div class="dh dark"><h3>Hello, shop by department</h3><button class="x" onclick="closeAll()" aria-label="Close" style="color:#fff"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="db menu" id="menuBody"></div>
+</aside>
+<div class="modal" id="qvM" role="dialog"></div>
+<div class="toast" id="toast"></div>
+<nav class="mbar" id="mbar"></nav>
+
+<script>
+// Generated by prototype/build/build_data.py from inventory_on_hand__Analyzer-Inventory-Default__20261024.txt
+window.PRODUCTS = [
+ {
+  "id": "1760910",
+  "dept": "Living Room",
+  "type": "Sofa",
+  "name": "Thornton Sofa",
+  "brand": "Flexsteel",
+  "collection": "Thornton",
+  "style": "Traditional",
+  "color": "Cream",
+  "material": "Fabric",
+  "dims": {
+   "w": 86,
+   "d": 35,
+   "h": 38
+  },
+  "description": "Showcase your home with the timeless charm of the Thornton sofa. Smoothly rolled edges and arms, tapered block legs, and a welt-corded trim make it the quintessential living area piece. Offered in your choice of leather or fabric, this sofa provides the style and comfort that has made it one of Flexsteel's long-time best sellers.",
+  "specs": {
+   "Arm type": "Rolled",
+   "Back style": "Pillow back, attached",
+   "Skirted": "No",
+   "Accent material": "Wood",
+   "Upholstery options": "Fabric or leather",
+   "Pattern": "Solid"
+  },
+  "features": [
+   "Rolled arms with welt-cord trim",
+   "Tapered block legs",
+   "Blue Steel Spring seating",
+   "Handcrafted in North America"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frdavdbpeiay.jpg",
+   "https://images.webfronts.com/cache/froxeedejgyr.jpg",
+   "https://images.webfronts.com/cache/frsydtljspws.jpg",
+   "https://images.webfronts.com/cache/frkztzecvmer.jpg",
+   "https://images.webfronts.com/cache/frrtbjrfqilq.jpg",
+   "https://images.webfronts.com/cache/frjrqfkvjwic.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/sofas/flexsteel/353531",
+  "item_id": "000001760910",
+  "mfr_sku": "3535-31 665-70",
+  "vendor": "FLEXSTEEL",
+  "price": 4739.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1777700",
+  "dept": "Living Room",
+  "type": "Sofa",
+  "name": "Cooper Triple-Power Zero-Gravity Leather Sofa",
+  "brand": "Liberty Furniture",
+  "collection": "Cooper",
+  "style": "Transitional",
+  "color": "Camel",
+  "material": "Leather",
+  "dims": {
+   "w": 87,
+   "d": 41,
+   "h": 41,
+   "lbs": 324
+  },
+  "description": "The Cooper sofa is built from solid hardwood, plywood and laminated veneer lumber and upholstered in semi-aniline top-grain leather in a camel finish, so everywhere your body touches is genuine leather. Triple-power zero-gravity recline with a power articulating headrest and power lumbar lets you find a neutral-spine position that relieves pressure on the back, neck and shoulders. Memory-foam bucket seats, a full pad-over chaise, contrast stitching and USB-A and USB-C ports at each end round it out.",
+  "specs": {
+   "Motion": "Power reclining (P3, zero gravity)",
+   "Arm type": "Pillow",
+   "Upholstery": "Top-grain leather with match",
+   "Frame": "Solid hardwood, plywood, LVL"
+  },
+  "features": [
+   "Power recline, power headrest and power lumbar",
+   "Zero-gravity position",
+   "Memory foam in seats",
+   "USB-A and USB-C charging at each end"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frhspxuqzuma.jpg",
+   "https://images.webfronts.com/cache/freqxummxurd.jpg",
+   "https://images.webfronts.com/cache/frpzdlwwaaza.jpg",
+   "https://images.webfronts.com/cache/frbymvvjotxr.jpg",
+   "https://images.webfronts.com/cache/fronstuoirfu.jpg",
+   "https://images.webfronts.com/cache/fratehkttxhh.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/sofas/liberty-furniture-industries/7007CM33P",
+  "item_id": "000001777700",
+  "mfr_sku": "7007CM-33P",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 3319.95,
+  "qty": 3,
+  "stock": {
+   "Redmond Showroom": 2,
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1766910",
+  "dept": "Living Room",
+  "type": "Recliner",
+  "name": "Porter Power Recliner with Power Headrest & Lumbar",
+  "brand": "Flexsteel",
+  "collection": "Porter",
+  "style": "Transitional",
+  "color": "Brown",
+  "material": "Leather",
+  "dims": {
+   "w": 36,
+   "d": 42,
+   "h": 43
+  },
+  "description": "Sink into the effortless comfort of the Porter power recliner, a blend of refined design and everyday luxury. Independently adjustable recline, headrest and lumbar support let you dial in your perfect position, contoured seats embrace you in all the right places, and Flexsteel's signature Blue Steel Spring system delivers support that stands the test of time.",
+  "specs": {
+   "Motion": "Power reclining",
+   "Arm type": "Padded track arms",
+   "Back style": "Pillow",
+   "Upholstery options": "Leather or fabric"
+  },
+  "features": [
+   "Power recline, headrest and lumbar, each independent",
+   "Blue Steel Spring seat system",
+   "Pop-out cupholders",
+   "USB-A and USB-C ports with zero-draw technology",
+   "Sustainably sourced wood frame",
+   "Handcrafted in North America"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frnquxadaiyx.jpg",
+   "https://images.webfronts.com/cache/fryfenhustwr.jpg",
+   "https://images.webfronts.com/cache/frxhikqdddfk.jpg",
+   "https://images.webfronts.com/cache/freufquorfyt.jpg",
+   "https://images.webfronts.com/cache/frusourqbgjq.jpg",
+   "https://images.webfronts.com/cache/frirapayvnvr.jpg"
+  ],
+  "source": "https://www.flexsteel.com/products/b3865-50l",
+  "item_id": "000001766910",
+  "mfr_sku": "B3865-50L 824-82",
+  "vendor": "FLEXSTEEL",
+  "price": 3809.95,
+  "qty": 3,
+  "stock": {
+   "Redmond Showroom": 2,
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1768990",
+  "dept": "Living Room",
+  "type": "Recliner",
+  "name": "Phoenix Power Zero-Gravity Recliner with Immersive Audio",
+  "brand": "Parker House",
+  "collection": "Phoenix",
+  "style": "Modern",
+  "color": "Black",
+  "material": "Leather",
+  "dims": {
+   "w": 39,
+   "d": 40.5,
+   "h": 44
+  },
+  "description": "Bring the theater experience home with the Phoenix power recliner. Zero-gravity recline, adjustable lumbar and an independent headrest help you find the perfect viewing angle. A built-in sound system delivers immersive wireless audio with subtle seat vibration, while hidden black stainless steel cupholders and ambient floor lighting add a cinematic touch. Upholstered in Autumn Black top-grain leather.",
+  "specs": {
+   "Motion": "Power zero-gravity recline",
+   "Cover": "Autumn Black",
+   "Material": "Top-grain leather with match",
+   "Also available in": "Autumn Caramel"
+  },
+  "features": [
+   "Wireless immersive audio with seat vibration",
+   "Power headrest and lumbar",
+   "Hidden tilt-out stainless cupholders",
+   "Multi-color ambient floor lighting",
+   "USB and USB-C in the power controls",
+   "FSC-certified wood, solar-powered factory"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/meencjimbwgk.jpg",
+   "https://images.webfronts.com/cache/menlaxfxsvdk.jpg",
+   "https://images.webfronts.com/cache/melisjdljyws.jpg",
+   "https://images.webfronts.com/cache/meddfmcnhyub.jpg"
+  ],
+  "source": "https://parker-house.com/products/phoenix-autumn-black-power-zero-gravity-recliner-with-immersive-audio",
+  "item_id": "000001768990",
+  "mfr_sku": "MPHX#812P3ZIA-ATBK",
+  "vendor": "PARKER HOUSE MFG CO INC",
+  "price": 2589.95,
+  "qty": 4,
+  "stock": {
+   "Redmond Showroom": 2,
+   "Warehouse": 2
+  }
+ },
+ {
+  "id": "1751700",
+  "dept": "Living Room",
+  "type": "Accent Chair",
+  "name": "Barolo Leather Swivel Club Chair",
+  "brand": "Parker House",
+  "collection": "Barolo",
+  "style": "Traditional",
+  "color": "Whiskey",
+  "material": "Leather",
+  "dims": {
+   "w": 31,
+   "d": 27.5,
+   "h": 32
+  },
+  "description": "A timelessly chic swivel chair with a classic, versatile silhouette that fits almost any room. The low-profile barrel seat is wrapped in glove-soft leather and turns a full 360 degrees, and bold decorative stitching sets it apart.",
+  "specs": {
+   "Motion": "360\u00b0 swivel",
+   "Cover": "Vintage Whiskey",
+   "Material": "100% all-over aniline leather",
+   "Also available in": "Lyric Sage, Snow, Vintage Caramel, Vintage Brown, Vintage Navy, Vintage Onyx, Vintage Slate"
+  },
+  "features": [
+   "Contoured back and sloped arm",
+   "360-degree swivel base",
+   "Sinuous spring construction",
+   "Foam and fiber-wrapped seat cushion"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/memutklqkewd.jpg",
+   "https://images.webfronts.com/cache/meatwhojkveg.jpg",
+   "https://images.webfronts.com/cache/mejgwmthoevb.jpg",
+   "https://images.webfronts.com/cache/mexupxgocfig.jpg",
+   "https://images.webfronts.com/cache/metuiwhfajyq.jpg",
+   "https://images.webfronts.com/cache/meapiwtirqmx.jpg"
+  ],
+  "source": "https://parker-house.com/products/sbar-912s-vgwk",
+  "item_id": "000001751700",
+  "mfr_sku": "SBAR #912 S-VGWK",
+  "vendor": "PARKER HOUSE MFG CO INC",
+  "price": 829.95,
+  "qty": 3,
+  "stock": {
+   "Warehouse": 2,
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1762130",
+  "dept": "Dining",
+  "type": "Dining Table",
+  "name": "Santa Fe 57\" Pedestal Table with Butterfly Leaf",
+  "brand": "Winners Only",
+  "collection": "Santa Fe",
+  "style": "Modern",
+  "color": "Chestnut / Espresso",
+  "material": "Solid Hardwood",
+  "dims": {
+   "w": 42,
+   "d": 57,
+   "h": 30,
+   "note": "42\" round, extends to 57\" with leaf"
+  },
+  "description": "Handsome, affordable solid-hardwood dining with contemporary styling. A self-storing 15\" butterfly leaf on a cable-glide mechanism extends the table from 42\" to 57\".",
+  "specs": {
+   "Construction": "Solid hardwood",
+   "Leaf": "15\" self-storing butterfly",
+   "Floor to apron": "26.5\"",
+   "Pedestal barrel": "7.75\"W x 6\"D x 20.5\"H"
+  },
+  "features": [
+   "Cable glide extension",
+   "Self-storing leaf",
+   "Two-tone chestnut and espresso finish"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frjgdwpexuec.jpg",
+   "https://images.webfronts.com/cache/frgevuakzexn.jpg",
+   "https://images.webfronts.com/cache/frgplohmxytx.jpg",
+   "https://images.webfronts.com/cache/frmsqmclcubt.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/tables/winners-only/DS4257CX",
+  "parts": [
+   "1762140"
+  ],
+  "parts_note": "Sold as top + pedestal base (two RETAILvantage items)",
+  "item_id": "000001762130",
+  "mfr_sku": "DS4257CXT",
+  "vendor": "WINNER'S ONLY",
+  "price": 769.9,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1752290",
+  "dept": "Dining",
+  "type": "Dining Table",
+  "name": "Al Fresco Drop Leaf Table",
+  "brand": "Liberty Furniture",
+  "collection": "Al Fresco",
+  "style": "Farmhouse",
+  "color": "Graphite / White",
+  "material": "Rubberwood & Oak Veneer",
+  "dims": {
+   "w": 42,
+   "d": 42,
+   "h": 30,
+   "lbs": 78
+  },
+  "description": "Character and practicality in one: rubberwood solids and pin-knotty white oak veneers in a two-tone Graphite and Whitestone finish. Dual 11\" drop leaves let you resize the table as needed, the planked top adds depth, wood-and-peg accents nod to artisan craftsmanship, and a bottom shelf adds storage or display space.",
+  "specs": {
+   "Leaves": "Two 11\" drop leaves",
+   "Finish": "Graphite and Whitestone",
+   "Shelf": "Bottom display shelf"
+  },
+  "features": [
+   "Adjustable size with drop leaves",
+   "Planked tabletop",
+   "Bottom shelf storage"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frvebmtqrtni.jpg",
+   "https://images.webfronts.com/cache/frmkfubhnatx.jpg",
+   "https://images.webfronts.com/cache/fragdiqoukgf.jpg",
+   "https://images.webfronts.com/cache/frlwvkwoqpun.jpg",
+   "https://images.webfronts.com/cache/frcpysddovaf.jpg",
+   "https://images.webfronts.com/cache/fryzxzbpcobw.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/tables/liberty-furniture-industries/741T4242",
+  "item_id": "000001752290",
+  "mfr_sku": "741-T4242",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 449.95,
+  "qty": 1,
+  "stock": {
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1740800",
+  "dept": "Dining",
+  "type": "Dining Table",
+  "name": "Space Savers 47\" Round Pedestal Table",
+  "brand": "Liberty Furniture",
+  "collection": "Space Savers",
+  "style": "Contemporary",
+  "color": "Walnut",
+  "material": "Rubberwood & Walnut Veneer",
+  "dims": {
+   "w": 47,
+   "d": 47,
+   "h": 29,
+   "lbs": 57
+  },
+  "description": "Gather the family around this round pedestal table, crafted of rubberwood solids and walnut veneers in a satin walnut finish with a fixed top on a distinctive architectural base.",
+  "specs": {
+   "Top": "Fixed, round",
+   "Finish": "Satin walnut"
+  },
+  "features": [
+   "Compact round footprint",
+   "Architectural pedestal base"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frqdnfklvcyw.jpg",
+   "https://images.webfronts.com/cache/frkhhblxcdno.jpg",
+   "https://images.webfronts.com/cache/frncgplifnpo.jpg",
+   "https://images.webfronts.com/cache/frpufblytvwc.jpg",
+   "https://images.webfronts.com/cache/frcfcmuvixvs.jpg",
+   "https://images.webfronts.com/cache/frpulqxioedk.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/tables/liberty-furniture-industries/198T4747",
+  "item_id": "000001740800",
+  "mfr_sku": "198-T4747",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 469.95,
+  "qty": 1,
+  "stock": {
+   "Returns Building": 1
+  }
+ },
+ {
+  "id": "1615930",
+  "dept": "Dining",
+  "type": "Dining Chair",
+  "name": "Pacifica X-Back Side Chair",
+  "brand": "Winners Only",
+  "collection": "Pacifica",
+  "style": "Farmhouse",
+  "color": "White / Rustic Brown",
+  "material": "Solid Rubberwood",
+  "dims": {
+   "w": 18,
+   "d": 22.5,
+   "h": 40
+  },
+  "description": "Simple, solid-hardwood design with subtle accents and a charming two-tone White and Rustic Brown farmhouse finish.",
+  "specs": {
+   "Seat width": "18\"",
+   "Seat depth": "17\"",
+   "Floor to seat": "18.5\"",
+   "Construction": "Solid rubberwood"
+  },
+  "features": [
+   "Classic X-back",
+   "Two-tone farmhouse finish"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frzlsmzktkfb.jpg",
+   "https://images.webfronts.com/cache/fraqnydnsksb.jpg",
+   "https://images.webfronts.com/cache/frmfoxfnnsbx.jpg",
+   "https://images.webfronts.com/cache/frxmtvacyuqf.jpg",
+   "https://images.webfronts.com/cache/frlttpkxvfkf.jpg",
+   "https://images.webfronts.com/cache/frmajwmixgll.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/chairs/winners-only/DP521S",
+  "item_id": "000001615930",
+  "mfr_sku": "DP521S",
+  "vendor": "WINNER'S ONLY",
+  "price": 169.95,
+  "qty": 8,
+  "stock": {
+   "Warehouse": 8
+  }
+ },
+ {
+  "id": "1731830",
+  "dept": "Dining",
+  "type": "Bar Stool",
+  "name": "30\" Swivel Bar Stool with Back",
+  "brand": "Sunny Designs",
+  "collection": "",
+  "style": "Rustic",
+  "color": "Grey",
+  "material": "Wood & Fabric",
+  "dims": {
+   "w": 19,
+   "d": 18.5,
+   "h": 44,
+   "lbs": 30
+  },
+  "description": "A bar-height swivel stool with a supportive back and a cushioned seat. Also available in 24\" counter height.",
+  "specs": {
+   "Seat height": "30\" (bar height)",
+   "Seat": "Cushioned",
+   "Motion": "Swivel"
+  },
+  "features": [
+   "Swivel seat",
+   "Cushion seat",
+   "Matching 24\" counter stool available"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frxmxqsenshf.jpg",
+   "https://images.webfronts.com/cache/frnifgddgxiu.jpg",
+   "https://images.webfronts.com/cache/frifxuhrtxwx.jpg",
+   "https://images.webfronts.com/cache/frxkmtjxpsdh.jpg",
+   "https://images.webfronts.com/cache/frhcnwfdbbaq.jpg",
+   "https://images.webfronts.com/cache/frjczxtsnfyc.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/dining-room/dining-room-furniture/bar-stools/sunny-designs/1624AGB30",
+  "item_id": "000001731830",
+  "mfr_sku": "1624AG-B30",
+  "vendor": "SUNNY DESIGN INC",
+  "price": 279.95,
+  "qty": 10,
+  "stock": {
+   "Warehouse": 6,
+   "Redmond Showroom": 4
+  }
+ },
+ {
+  "id": "1742070",
+  "dept": "Bedroom",
+  "type": "Dresser",
+  "name": "Paradise Valley 8-Drawer Dresser",
+  "brand": "Liberty Furniture",
+  "collection": "Paradise Valley",
+  "style": "Rustic",
+  "color": "Saddle Brown",
+  "material": "Rubberwood & Oak Veneer",
+  "dims": {
+   "w": 66,
+   "d": 19,
+   "h": 40,
+   "lbs": 223
+  },
+  "description": "Built for beauty, strength and durability. Rubberwood solids and split-heart white oak veneers in a Saddle Brown finish, bead-molded drawer fronts on soft-close guides, felt-lined apothecary-style top drawers and cedar-lined bottom drawers. Chamfered pilasters flow into square tapered feet, finished with antique pewter drop-bail and knob hardware.",
+  "specs": {
+   "Drawers": "8, soft-close",
+   "Lining": "Felt-lined top, cedar-lined bottom",
+   "Hardware": "Antique pewter"
+  },
+  "features": [
+   "Soft-closing drawer guides",
+   "Felt and cedar lined drawers",
+   "Bead molding details"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frafyazaitst.jpg",
+   "https://images.webfronts.com/cache/fraumiorqwir.jpg",
+   "https://images.webfronts.com/cache/frvgzfbehfnk.jpg",
+   "https://images.webfronts.com/cache/frobjoyrdhof.jpg",
+   "https://images.webfronts.com/cache/frcstesxyemg.jpg",
+   "https://images.webfronts.com/cache/frakrdbiccxy.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/bedroom/bedroom-furniture/armoires-Dressers-cabinets/liberty-furniture-industries/297BR31",
+  "item_id": "000001742070",
+  "mfr_sku": "297-BR31",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 1299.95,
+  "qty": 1,
+  "stock": {
+   "Returns Building": 1
+  }
+ },
+ {
+  "id": "1769280",
+  "dept": "Bedroom",
+  "type": "Mirror",
+  "name": "Proximity Place Floor Mirror",
+  "brand": "Liberty Furniture",
+  "collection": "Proximity Place",
+  "style": "Transitional",
+  "color": "Barley Buff",
+  "material": "Wood",
+  "dims": {
+   "w": 38,
+   "d": 2,
+   "h": 78,
+   "lbs": 81
+  },
+  "description": "Proximity Place is the essence of transitional design: simple yet sophisticated lines in a Barley Buff neutral finish that works with any decor.",
+  "specs": {
+   "Finish": "Barley Buff",
+   "Style": "Transitional"
+  },
+  "features": [
+   "Full-length floor mirror"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frzzqnzmyqcb.jpg",
+   "https://images.webfronts.com/cache/frxwunchvxjl.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/bedroom/bedroom-furniture/vanity-tables-mirrors/liberty-furniture-industries/780ACM50",
+  "item_id": "000001769280",
+  "mfr_sku": "780-ACM50",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 509.95,
+  "qty": 2,
+  "stock": {
+   "Redmond Showroom": 1,
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1769440",
+  "dept": "Bedroom",
+  "type": "Chest",
+  "name": "40\" 5-Drawer Chest",
+  "brand": "Winners Only",
+  "collection": "",
+  "style": "Contemporary",
+  "color": "Grey",
+  "material": "Solid Hardwood & Birch Veneer",
+  "dims": {
+   "w": 40,
+   "d": 18,
+   "h": 52.5
+  },
+  "description": "Gorgeous solid hardwood and birch veneer in a rich gray finish, with ball-bearing glides and a felt-lined top drawer.",
+  "specs": {
+   "Drawers": "5 (top 2 double-face)",
+   "Glides": "Ball bearing",
+   "Top drawer": "Felt-lined"
+  },
+  "features": [
+   "Ball-bearing drawer glides",
+   "Felt-lined top drawer"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frbugesofzmu.jpg",
+   "https://images.webfronts.com/cache/frnjuvsmeayo.jpg",
+   "https://images.webfronts.com/cache/frdshzwtvxdo.jpg",
+   "https://images.webfronts.com/cache/frbypyhypawl.jpg",
+   "https://images.webfronts.com/cache/frtjsoublvxs.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/bedroom/bedroom-furniture/chests/winners-only/BD3007N",
+  "item_id": "000001769440",
+  "mfr_sku": "BD3007N",
+  "vendor": "WINNER'S ONLY",
+  "price": 629.95,
+  "qty": 6,
+  "stock": {
+   "Warehouse": 5,
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1752270",
+  "dept": "Bedroom",
+  "type": "Nightstand",
+  "name": "Shaker Lakes Nightstand with Charging Station",
+  "brand": "Liberty Furniture",
+  "collection": "Shaker Lakes",
+  "style": "Transitional",
+  "color": "Harvest Brown",
+  "material": "Poplar & Maple Veneer",
+  "dims": {
+   "w": 28,
+   "d": 17,
+   "h": 28,
+   "lbs": 68
+  },
+  "description": "Timeless style with modern convenience. Poplar solids with pin-knotty maple veneers in a warm Harvest Brown finish, picture-frame moldings, a floating base with angled tapered feet and dark bronze bar pulls. A built-in charging station with 2 AC outlets, USB-A and USB-C powers your bedside essentials.",
+  "specs": {
+   "Charging": "2 AC outlets, 1 USB-A, 1 USB-C",
+   "Drawers": "2, soft-close",
+   "Lining": "Felt-lined top, cedar-lined bottom"
+  },
+  "features": [
+   "Built-in charging station",
+   "Soft-close drawers",
+   "Felt and cedar lined drawers"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frumukqnyysf.jpg",
+   "https://images.webfronts.com/cache/frhcmtbmmzmt.jpg",
+   "https://images.webfronts.com/cache/frdzkypesdvz.jpg",
+   "https://images.webfronts.com/cache/frchbqgivpjm.jpg",
+   "https://images.webfronts.com/cache/fryaywqbsjuw.jpg",
+   "https://images.webfronts.com/cache/freahzzhhnsb.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/bedroom/bedroom-furniture/nightstands/liberty-furniture-industries/936BR61",
+  "item_id": "000001752270",
+  "mfr_sku": "936-BR61",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 599.95,
+  "qty": 4,
+  "stock": {
+   "Warehouse": 4
+  }
+ },
+ {
+  "id": "1774220",
+  "dept": "Bedroom",
+  "type": "Nightstand",
+  "name": "Kalispell Solid Wood Nightstand",
+  "brand": "Porter Designs",
+  "collection": "Kalispell",
+  "style": "Craftsman",
+  "color": "Harvest (Honey)",
+  "material": "Solid Sheesham Wood",
+  "dims": {
+   "w": 25.5,
+   "d": 16,
+   "h": 26
+  },
+  "description": "An homage to the American Arts & Crafts movement, handmade by artisans from solid sheesham wood. Hammered black metal hardware and tapered lines add architectural detail, and the honey-toned harvest finish highlights the wood's rich grain.",
+  "specs": {
+   "Construction": "Solid sheesham wood",
+   "Hardware": "Hammered black metal",
+   "Finish": "Harvest"
+  },
+  "features": [
+   "Handmade by artisans",
+   "Solid wood construction"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frbktcxwnpum.jpg",
+   "https://images.webfronts.com/cache/frufzdnystyk.jpg",
+   "https://images.webfronts.com/cache/frqqltuvdmyn.jpg",
+   "https://images.webfronts.com/cache/frpptdfrutpo.jpg",
+   "https://images.webfronts.com/cache/fratjyhydesw.jpg"
+  ],
+  "source": "https://www.porterdesignsusa.com/products/kalispell-nightstand",
+  "item_id": "000001774220",
+  "mfr_sku": "B2439NSH",
+  "vendor": "PORTER INTERNATIONAL",
+  "price": 529.95,
+  "qty": 4,
+  "stock": {
+   "Warehouse": 4
+  }
+ },
+ {
+  "id": "1765460",
+  "dept": "Living Room",
+  "type": "End Table",
+  "name": "Huron Round End Table",
+  "brand": "Emerald Home",
+  "collection": "Huron",
+  "style": "Modern",
+  "color": "Dark Brown / Black",
+  "material": "Ash Veneer & Metal",
+  "dims": {
+   "w": 24,
+   "d": 24,
+   "h": 25.75
+  },
+  "description": "Sleek lines and modern geometry: a tray-style top in ash veneer over hardwood solids, set on a black metal base with double-rod legs.",
+  "specs": {
+   "Top": "Ash veneer over hardwood solids, tray style",
+   "Base": "Black metal, double-rod legs"
+  },
+  "features": [
+   "Tray-style top",
+   "Coordinates with Huron nesting cocktail and chairside tables"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frhmhniuzirt.jpg",
+   "https://images.webfronts.com/cache/frvjwgorherm.tiff",
+   "https://images.webfronts.com/cache/frzibvdpnpma.tiff",
+   "https://images.webfronts.com/cache/frwublbmplyz.tiff",
+   "https://images.webfronts.com/cache/frzjvqyivoba.tiff",
+   "https://images.webfronts.com/cache/frxwdcbgisit.png"
+  ],
+  "source": "https://www.emeraldhome.com/round-side-table-t429-06",
+  "source_images": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/tables/emerald-home-furnishings/T42906",
+  "item_id": "000001765460",
+  "mfr_sku": "T429-06",
+  "vendor": "EMERALD HOME FURNISHINGS (B&D)",
+  "price": 159.95,
+  "qty": 4,
+  "stock": {
+   "Warehouse": 3,
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1744720",
+  "dept": "Living Room",
+  "type": "Cocktail Table",
+  "name": "Modern Farmhouse Oversized Square Cocktail Table",
+  "brand": "Liberty Furniture",
+  "collection": "Modern Farmhouse",
+  "style": "Farmhouse",
+  "color": "Flea Market White",
+  "material": "Poplar & Oak Veneer",
+  "dims": {
+   "w": 48,
+   "d": 48,
+   "h": 18,
+   "lbs": 130
+  },
+  "description": "Poplar solids with knotty white oak veneers in a heavily distressed flea-market white finish, a high-low planked top, a bottom shelf for storage, and casters for easy moving.",
+  "specs": {
+   "Top": "High-low planked",
+   "Storage": "Bottom shelf",
+   "Casters": "Yes"
+  },
+  "features": [
+   "Casters for easy moving",
+   "Bottom storage shelf"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frimyogmeixp.jpg",
+   "https://images.webfronts.com/cache/frcdmidgncun.jpg",
+   "https://images.webfronts.com/cache/frpgogpujovj.jpg",
+   "https://images.webfronts.com/cache/frcgrwtvlgxv.jpg",
+   "https://images.webfronts.com/cache/frigemgrdgsn.jpg",
+   "https://images.webfronts.com/cache/fruynbofbpcq.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/tables/liberty-furniture-industries/406WOT1014",
+  "item_id": "000001744720",
+  "mfr_sku": "406W-OT1014",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 719.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1771680",
+  "dept": "Living Room",
+  "type": "End Table",
+  "name": "South Bend End Table with Drawer",
+  "brand": "Liberty Furniture",
+  "collection": "South Bend",
+  "style": "Modern",
+  "color": "Burnished Beige",
+  "material": "Rubberwood & Oak Veneer",
+  "dims": {
+   "w": 24,
+   "d": 26,
+   "h": 24,
+   "lbs": 73
+  },
+  "description": "Casual elegance in rubberwood solids and cathedral white oak veneers with a Burnished Beige finish. A flat-cut storage drawer with satin pewter bar pull, rounded wide legs and an open shelf below for display or everyday essentials.",
+  "specs": {
+   "Storage": "1 drawer + open shelf",
+   "Hardware": "Satin pewter"
+  },
+  "features": [
+   "Storage drawer",
+   "Open lower shelf"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frjkbaycrsuz.jpg",
+   "https://images.webfronts.com/cache/frijicueghpm.jpg",
+   "https://images.webfronts.com/cache/freruxdzwdev.jpg",
+   "https://images.webfronts.com/cache/friuzxzejvzl.jpg",
+   "https://images.webfronts.com/cache/froujcsvhdol.jpg",
+   "https://images.webfronts.com/cache/frmpfixnlopl.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/tables/liberty-furniture-industries/306OT1020",
+  "item_id": "000001771680",
+  "mfr_sku": "306-OT1020",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 709.95,
+  "qty": 2,
+  "stock": {
+   "Returns Building": 1,
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1746800",
+  "dept": "Living Room",
+  "type": "End Table",
+  "name": "Sedona Round Pedestal End Table",
+  "brand": "Liberty Furniture",
+  "collection": "Sedona",
+  "style": "Traditional",
+  "color": "Kona Brown",
+  "material": "Rubberwood & Oak Veneer",
+  "dims": {
+   "w": 26,
+   "d": 26,
+   "h": 24,
+   "lbs": 40
+  },
+  "description": "Spanish-style end table in rubberwood solids and oak veneers with a Kona brown finish, a planked top and a round turned pedestal base.",
+  "specs": {
+   "Top": "Planked",
+   "Base": "Turned pedestal"
+  },
+  "features": [
+   "Spanish-inspired turned pedestal"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frypwfrapcvb.jpg",
+   "https://images.webfronts.com/cache/frjkumaxibbj.jpg",
+   "https://images.webfronts.com/cache/frqvcfeqdfyj.jpg",
+   "https://images.webfronts.com/cache/frskbwmxbsou.jpg",
+   "https://images.webfronts.com/cache/frtnavgnfbuc.jpg",
+   "https://images.webfronts.com/cache/frkewfjnlcgn.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/tables/liberty-furniture-industries/231OT1020",
+  "item_id": "000001746800",
+  "mfr_sku": "231-OT1020",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 309.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1744690",
+  "dept": "Living Room",
+  "type": "Cocktail Table",
+  "name": "Pacific Grove Round Cocktail Table",
+  "brand": "Emerald Home",
+  "collection": "Pacific Grove",
+  "style": "Coastal",
+  "color": "Sandy Tan",
+  "material": "Oak Veneer & Hardwood",
+  "dims": {
+   "w": 40,
+   "d": 40,
+   "h": 19
+  },
+  "description": "Light, airy coastal style. Solid hardwood construction with oak veneers in a multi-step warm sandy finish with rasping, sand-through, light wire-brushing and white glazing that highlight a quarter-turned grain pattern. Sits on casters.",
+  "specs": {
+   "Construction": "Solid hardwood, oak veneers",
+   "Casters": "Yes",
+   "Finish": "Warm sandy, white glazed"
+  },
+  "features": [
+   "Casters",
+   "Coordinating end tables available"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frmbgfocikeu.jpg",
+   "https://images.webfronts.com/cache/frbbcrciqdez.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/tables/emerald-home-furnishings/T28500",
+  "item_id": "000001744690",
+  "mfr_sku": "T285-00",
+  "vendor": "EMERALD HOME FURNISHINGS (B&D)",
+  "price": 509.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1756490",
+  "dept": "Home Office",
+  "type": "Bookcase",
+  "name": "Hensley Door Bookcase",
+  "brand": "aspenhome",
+  "collection": "Hensley",
+  "style": "Transitional",
+  "color": "Honey",
+  "material": "Wood",
+  "dims": {
+   "w": 32,
+   "d": 15,
+   "h": 75
+  },
+  "description": "Classic transitional style in a warm honey finish with aged brass hardware. Two doors, three adjustable shelves and cord management.",
+  "specs": {
+   "Doors": "2",
+   "Shelves": "3 adjustable/removable",
+   "Assembly": "Fully assembled"
+  },
+  "features": [
+   "Adjustable shelves",
+   "Cord management",
+   "Fully assembled"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frhbljslpafb.jpg",
+   "https://images.webfronts.com/cache/frtfzycfeirz.jpg",
+   "https://images.webfronts.com/cache/frqwvxqdhrox.jpg",
+   "https://images.webfronts.com/cache/fruescrcmjqw.jpg",
+   "https://images.webfronts.com/cache/frabcxxfttvo.jpg",
+   "https://images.webfronts.com/cache/fryijmpyechp.jpg"
+  ],
+  "source": "https://www.aspenhome.net/_/images/catalog/PDF/I3002-OFF-HNY.pdf",
+  "item_id": "000001756490",
+  "mfr_sku": "I3002-332",
+  "vendor": "FURNITURE VALUES INTERNATIONAL",
+  "price": 1179.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1787800",
+  "dept": "Home Office",
+  "type": "Bookcase",
+  "name": "Caraway Open Bookcase",
+  "brand": "aspenhome",
+  "collection": "Caraway",
+  "style": "Farmhouse",
+  "color": "Aged Ivory",
+  "material": "Wood",
+  "dims": {
+   "w": 32,
+   "d": 15,
+   "h": 76
+  },
+  "description": "Warm, approachable farmhouse style in a wire-brushed aged ivory finish with a contrasting brown top. Adjustable shelves and cord management.",
+  "specs": {
+   "Shelves": "Adjustable/removable",
+   "Finish": "Aged ivory with brown top"
+  },
+  "features": [
+   "Adjustable shelves",
+   "Cord management"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frcutwvbpshr.jpg",
+   "https://images.webfronts.com/cache/frvsosvydijv.jpg",
+   "https://images.webfronts.com/cache/froojkaetubk.jpg",
+   "https://images.webfronts.com/cache/frgonqzevjvk.jpg",
+   "https://images.webfronts.com/cache/frlxmdhsgoox.jpg",
+   "https://images.webfronts.com/cache/frmvlzflwlvd.jpg"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/home-office/home-office-furniture/bookcases-curios-cupboards-armoires/aspenhome/I2483331",
+  "item_id": "000001787800",
+  "mfr_sku": "I248-333-1",
+  "vendor": "FURNITURE VALUES INTERNATIONAL",
+  "price": 1109.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1740190",
+  "dept": "Home Office",
+  "type": "Bookcase",
+  "name": "Tanners Creek 72\" Bookcase",
+  "brand": "Liberty Furniture",
+  "collection": "Tanners Creek",
+  "style": "Industrial",
+  "color": "Greystone",
+  "material": "Melamine & Rubberwood",
+  "dims": {
+   "w": 42,
+   "d": 18,
+   "h": 72,
+   "lbs": 105
+  },
+  "description": "Scratch-resistant melamine on a rubberwood frame in a Greystone finish, with dark pewter metal-look open ends, five floating shelves and an \"X\" back accent. Use alone or pair with the Tanners Creek desk top.",
+  "specs": {
+   "Shelves": "5",
+   "Finish": "Greystone with dark pewter"
+  },
+  "features": [
+   "Scratch-resistant melamine",
+   "Pairs with desk top for a complete desk"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/frmcqlpqcdhm.png",
+   "https://images.webfronts.com/cache/fregrjsjepcj.png",
+   "https://images.webfronts.com/cache/frtavakcsudz.png",
+   "https://images.webfronts.com/cache/frpwlzjhvute.png",
+   "https://images.webfronts.com/cache/frqdpfifuzbd.png",
+   "https://images.webfronts.com/cache/frdfuevvdtzw.png"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/living-room/living-room-furniture/bookcases/liberty-furniture-industries/686HO201",
+  "item_id": "000001740190",
+  "mfr_sku": "686-H0201",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 339.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1740200",
+  "dept": "Home Office",
+  "type": "Desk",
+  "name": "Tanners Creek Desk Top & End Panel",
+  "brand": "Liberty Furniture",
+  "collection": "Tanners Creek",
+  "style": "Industrial",
+  "color": "Greystone",
+  "material": "Melamine & Rubberwood",
+  "dims": {
+   "w": 59,
+   "d": 22,
+   "h": 1,
+   "lbs": 41,
+   "note": "Desk top only; pairs with the Tanners Creek bookcase to form a desk"
+  },
+  "description": "A melamine-laminate desk top in grey stone with a solid rubberwood end panel in dark pewter. Cannot stand alone: pair with the Tanners Creek bookcase for a complete desk.",
+  "specs": {
+   "Top": "Melamine laminate",
+   "End panel": "Solid rubberwood"
+  },
+  "features": [
+   "Combines with bookcase into a desk"
+  ],
+  "images": [
+   "https://images.webfronts.com/cache/fremrkrvfcdy.png",
+   "https://images.webfronts.com/cache/frytwjyquyyn.png",
+   "https://images.webfronts.com/cache/frfthkvnggon.png",
+   "https://images.webfronts.com/cache/frwxwleovgje.png",
+   "https://images.webfronts.com/cache/frftdchgrmra.png",
+   "https://images.webfronts.com/cache/frgesmhnzqpn.png"
+  ],
+  "source": "https://www.wilsonsmattressgallery.com/furniture/home-office/home-office-furniture/desks/liberty-furniture-industries/686HO105T",
+  "item_id": "000001740200",
+  "mfr_sku": "686-H0105T",
+  "vendor": "LIBERTY FURNITURE",
+  "price": 209.95,
+  "qty": 1,
+  "stock": {
+   "Redmond Showroom": 1
+  }
+ },
+ {
+  "id": "1771500",
+  "dept": "Mattresses",
+  "type": "Mattress",
+  "name": "Aireloom Streamline Firm Mattress",
+  "brand": "Aireloom",
+  "collection": "Streamline (Preferred Collection)",
+  "style": "",
+  "color": "White",
+  "material": "Innerspring",
+  "size": "Queen",
+  "comfort": "Firm",
+  "dims": {
+   "w": 60,
+   "d": 80
+  },
+  "description": "Premium materials and mineral-enriched foams for a balanced, supportive feel that stays cool through the night. Handcrafted with the Original Aireloom Lift for elevated comfort, airflow and long-lasting support.",
+  "specs": {
+   "Construction": "Innerspring, Original Aireloom Lift",
+   "Comfort": "Firm",
+   "Made in": "USA, handmade",
+   "Warranty": "10 years"
+  },
+  "features": [
+   "Temperature regulated",
+   "Hypoallergenic",
+   "Premium natural materials",
+   "Certified safe"
+  ],
+  "images": [
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_FIRM_IG_1.svg",
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_FIRM_IG_2.svg",
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_FIRM_IG_3.svg"
+  ],
+  "source": "https://aireloom.com/product/streamline-firm/",
+  "item_id": "000001771500",
+  "mfr_sku": "9424179",
+  "vendor": "AIRELOOM",
+  "price": 4729.95,
+  "qty": 1,
+  "stock": {
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1768230",
+  "dept": "Mattresses",
+  "type": "Mattress",
+  "name": "Aireloom Streamline Luxury Firm Mattress",
+  "brand": "Aireloom",
+  "collection": "Streamline (Preferred Collection)",
+  "style": "",
+  "color": "White",
+  "material": "Innerspring + Latex",
+  "size": "King",
+  "comfort": "Luxury Firm",
+  "dims": {
+   "w": 76,
+   "d": 80
+  },
+  "description": "Blends premium natural comfort layers such as TerraPur natural latex and cotton with structured support. Handcrafted with the Original Aireloom Lift for supportive cushioning and breathable construction.",
+  "specs": {
+   "Construction": "Innerspring with natural latex",
+   "Comfort": "Luxury Firm",
+   "Made in": "USA, handmade",
+   "Warranty": "10 years"
+  },
+  "features": [
+   "TerraPur natural latex",
+   "Temperature regulated",
+   "Hypoallergenic",
+   "Certified safe"
+  ],
+  "images": [
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_LXFIRM_IG_1.svg",
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_LXFIRM_IG_2.svg",
+   "https://aireloom.com/wp-content/uploads/2026/03/PREF_SL_LXFIRM_IG_3.svg"
+  ],
+  "source": "https://aireloom.com/product/streamline-luxury-firm/",
+  "item_id": "000001768230",
+  "mfr_sku": "9424196",
+  "vendor": "AIRELOOM",
+  "price": 6529.95,
+  "qty": 1,
+  "stock": {
+   "Warehouse": 1
+  }
+ },
+ {
+  "id": "1774570",
+  "dept": "Mattresses",
+  "type": "Mattress",
+  "name": "Brooklyn Bedding Signature Hybrid Soft Mattress",
+  "brand": "Brooklyn Bedding",
+  "collection": "Signature Hybrid",
+  "style": "",
+  "color": "White",
+  "material": "Hybrid",
+  "size": "Queen",
+  "comfort": "Soft",
+  "dims": {
+   "w": 60,
+   "d": 80,
+   "h": 13.25
+  },
+  "description": "Named a best-value mattress: premium foam paired with individually encased coils for targeted support and motion isolation, with advanced foams for pressure relief and breathability.",
+  "specs": {
+   "Height": "13.25\" (7 layers)",
+   "Coils": "8\" Ascension X coils",
+   "Comfort foam": "3.5\"",
+   "Edge": "Solid edge-to-edge support"
+  },
+  "features": [
+   "GlacioTex cooling cover",
+   "Copper-infused foam for heat dispersion",
+   "Moisture-wicking quilt foam"
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0335/2136/9133/files/bb-signature-carousel-front_17e25497-5c29-4aba-8b52-b52c3a4acbeb.jpg",
+   "https://cdn.shopify.com/s/files/1/0335/2136/9133/files/bb-signature-carousel-angle_6e6b3e66-c9dd-4603-abbd-2b980c704e33.jpg",
+   "https://cdn.shopify.com/s/files/1/0335/2136/9133/files/bb-signature-carousel-detail_5c7c448a-ba0f-4fe1-aaba-2a07ee29efca.jpg",
+   "https://cdn.shopify.com/s/files/1/0335/2136/9133/files/bb-signature-carousel-firmness_b24e9d71-a5a3-4bea-8094-498e4c880f02.jpg"
+  ],
+  "source": "https://brooklynbedding.com/products/signature-hybrid",
+  "item_id": "000001774570",
+  "mfr_sku": "BBS13S50-Q-SOFT SIGN MATT",
+  "vendor": "BROOKLYN BEDDING",
+  "price": 1589.95,
+  "qty": 2,
+  "stock": {
+   "Warehouse": 2
+  }
+ },
+ {
+  "id": "1779320",
+  "dept": "Mattresses",
+  "type": "Mattress",
+  "name": "Beautyrest Black Series Four Medium Mattress",
+  "brand": "Beautyrest",
+  "collection": "Beautyrest Black",
+  "style": "",
+  "color": "White",
+  "material": "Innerspring",
+  "size": "Twin XL",
+  "comfort": "Medium",
+  "dims": {
+   "w": 38,
+   "d": 80,
+   "h": 17.5
+  },
+  "description": "Beautyrest Black's most premium cooling, responsive pressure relief and individualized support + motion separation, for those who want the ultimate in luxurious sleep.",
+  "specs": {
+   "Height": "17.25\"\u201317.5\"",
+   "Support": "Triple-Stranded Pocketed Coil + 4K Micro Coils",
+   "Comfort layers": "2X HD memory foam layers"
+  },
+  "features": [
+   "Advanced cooling layers",
+   "Individualized support and motion separation"
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/2405-BR-PDP-Black-S4_Carousel-02_2x_221d7d93-daeb-4d37-9b85-edbae3ded1da.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/2405-BR-PDP-Black-S4_FMSPT_Carousel-01_2x_f922aaad-b24a-4bb0-ae78-f9b3f70ba572.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/2405-BR-PDP-Black-Component-Carousel-04_2x_d17af7f5-d05a-4a83-842c-8a54ad35be68.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/2405-BR-PDP-Black-Component-Carousel-08_2x_891e902f-37ac-4340-ba16-23e9078df0df.jpg"
+  ],
+  "source": "https://www.beautyrest.com/products/black-mattress-series-four",
+  "item_id": "000001779320",
+  "mfr_sku": "700813279-1020",
+  "vendor": "SIMMONS COMPANY",
+  "price": 4109.95,
+  "qty": 2,
+  "stock": {
+   "Warehouse": 2
+  }
+ },
+ {
+  "id": "1761820",
+  "dept": "Mattresses",
+  "type": "Adjustable Base",
+  "name": "Beautyrest baselogic Silver Adjustable Base",
+  "brand": "Beautyrest",
+  "collection": "baselogic",
+  "style": "",
+  "color": "Charcoal",
+  "material": "",
+  "size": "Queen",
+  "comfort": "",
+  "dims": {
+   "w": 60,
+   "d": 80
+  },
+  "description": "Head and foot adjustability, a zero-gravity preset and a wireless remote, with 3-in-1 adjustable legs in stackable 4\" increments, or remove them for a zero-clearance profile.",
+  "specs": {
+   "Adjustment": "Head and foot",
+   "Presets": "Zero gravity, one-touch flat",
+   "Remote": "Wireless",
+   "Legs": "3-in-1 adjustable"
+  },
+  "features": [
+   "Zero-gravity preset",
+   "Wireless remote",
+   "Foldable for delivery",
+   "Zero-clearance option"
+  ],
+  "images": [
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/SILVER_ROOM_NO_TALENT.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/SILVER_LIFESTYLE1.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/SILVER_ZERO_GRAVITY.jpg",
+   "https://cdn.shopify.com/s/files/1/0666/8841/7984/files/SILVER_REMOTE.jpg"
+  ],
+  "source": "https://www.beautyrest.com/products/baselogic-silver-base-bed-frame",
+  "item_id": "000001761820",
+  "mfr_sku": "500833419-7550",
+  "vendor": "SIMMONS COMPANY",
+  "price": 729.95,
+  "qty": 3,
+  "stock": {
+   "Warehouse": 2,
+   "Redmond Showroom": 1
+  }
+ }
+];
+</script>
+<script>
+"use strict";
+const P = window.PRODUCTS || [];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const app = $('#app');
+const money = n => n.toLocaleString('en-US',{style:'currency',currency:'USD'});
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const img = (u, w=480) => u.includes('webfronts.com') ? `${u}?imgeng=/w_${w}/h_${w}/m_letterbox_ffffff_100${/\.tiff?$/i.test(u)?'/f_jpg':''}` : u;
+const store = {get(k,d){try{return JSON.parse(localStorage.getItem('w_'+k)) ?? d}catch(e){return d}}, set(k,v){try{localStorage.setItem('w_'+k,JSON.stringify(v))}catch(e){}}};
+const I = {
+  heart:'<svg class="ico" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-9A5 5 0 0 1 12 6a5 5 0 0 1 9.2 5c-2.2 4.6-9.2 9-9.2 9z"/></svg>',
+  l:'<svg class="ico" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>', r:'<svg class="ico" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>',
+  truck:'<svg class="ico" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>',
+  lock:'<svg class="ico" viewBox="0 0 24 24" style="width:14px;height:14px"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+  filter:'<svg class="ico" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="M4 6h16M7 12h10M10 18h4"/></svg>',
+  x:'<svg class="ico" viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+};
+
+// ---------- Facets ----------
+const COLORS = [
+  ['White / Cream','#f4efe4',/white|cream|ivory/i], ['Beige / Tan','#d6bf98',/beige|tan|buff|sandy|camel|whiskey|honey/i],
+  ['Brown','#7a5236',/brown|walnut|kona|chestnut|espresso|saddle|camel|whiskey|honey|harvest/i],
+  ['Grey','#9aa0a3',/grey|gray|graphite|greystone|charcoal/i], ['Black','#1c1c1c',/black/i],
+];
+const BANDS = [['Under $250',0,250],['$250 to $500',250,500],['$500 to $1,000',500,1000],['$1,000 to $2,500',1000,2500],['$2,500 & above',2500,1e9]];
+const DEPTS = ['Living Room','Bedroom','Dining','Mattresses','Home Office'];
+P.forEach(p => {
+  p.colors = COLORS.filter(c => c[2].test(p.color)).map(c => c[0]);
+  p.sz = p.size || (p.dims?.w ? (p.dims.w < 30 ? 'Under 30" wide' : p.dims.w <= 60 ? '30" to 60" wide' : 'Over 60" wide') : null);
+  p.band = BANDS.find(b => p.price >= b[1] && p.price < b[2])[0];
+  p.floor = (p.stock['Redmond Showroom'] || 0) > 0;
+  p.hay = [p.name,p.brand,p.type,p.dept,p.collection,p.color,p.material,p.style,p.comfort,p.size,p.description,(p.features||[]).join(' '),p.mfr_sku,p.item_id.replace(/^0+/,'')].join(' ').toLowerCase();
+});
+const FACETS = [
+  {k:'dept',l:'Department',g:p=>[p.dept],o:DEPTS},
+  {k:'type',l:'Category',g:p=>[p.type]},
+  {k:'price',l:'Price',g:p=>[p.band],o:BANDS.map(b=>b[0])},
+  {k:'color',l:'Color',g:p=>p.colors,sw:true},
+  {k:'size',l:'Size',g:p=>p.sz?[p.sz]:[],o:['Under 30" wide','30" to 60" wide','Over 60" wide','Twin XL','Queen','King']},
+  {k:'comfort',l:'Mattress firmness',g:p=>p.comfort?[p.comfort]:[],o:['Soft','Medium','Luxury Firm','Firm']},
+  {k:'material',l:'Material',g:p=>p.material?[p.material]:[]},
+  {k:'style',l:'Style',g:p=>p.style?[p.style]:[]},
+  {k:'brand',l:'Brand',g:p=>[p.brand]},
+  {k:'avail',l:'Availability',g:p=>(p.qty>0?['In stock']:[]).concat(p.floor?['See it in the showroom']:[])},
+];
+
+// ---------- State ----------
+let cart = store.get('cart', {}), wish = store.get('wish', []), recent = store.get('recent', []), zip = store.get('zip', '97756');
+const byId = id => P.find(p => p.id === id);
+const local = () => /^97[67]/.test(zip);
+function hashState(){ const [path, qs=''] = location.hash.slice(1).split('?'); return {path: path || '/', params: new URLSearchParams(qs)}; }
+function go(path, params){ const q = params && params.toString(); location.hash = path + (q ? '?' + q : ''); }
+function cur(){ return new URLSearchParams(location.hash.split('?')[1] || ''); }
+
+// ---------- Search ----------
+function scoreOf(p, ws){ let s = 0; for (const w of ws){ if (!p.hay.includes(w)) return -1; s += 1 + (p.name.toLowerCase().includes(w)?5:0) + (p.type.toLowerCase().includes(w)?4:0) + (p.brand.toLowerCase().includes(w)?3:0); } return s; }
+function find(q){ const ws = q.toLowerCase().split(/\s+/).filter(Boolean).map(w => w.length > 3 ? w.replace(/(es|s)$/,'') : w); return P.map(p => [p, ws.length ? scoreOf(p, ws) : 0]).filter(x => x[1] >= 0); }
+
+// ---------- Bits ----------
+function price(n, lg){ const [d,c] = n.toFixed(2).split('.'); return `<span class="price ${lg?'lg':''}"><span class="s">$</span><span class="d">${Number(d).toLocaleString()}</span><span class="c">${c}</span></span>`; }
+function stock(p, long){
+  if (p.qty <= 0) return `<span class="low">Special order</span>`;
+  const s = p.qty === 1 ? `<span class="low">Only 1 left in stock</span>` : p.qty <= 3 ? `<span class="low">Only ${p.qty} left in stock</span>` : `<span class="instock">In Stock</span>`;
+  return long ? s : s + (p.floor ? ` <span class="deliv">· on display</span>` : '');
+}
+function deliv(p){ return local() ? `<span class="deliv">${I.truck.replace('class="ico"','class="ico" style="width:16px;height:16px;vertical-align:-3px"')} <b>Local delivery &amp; setup</b> or pickup in Redmond</span>` : `<span class="deliv">Ships by freight to <b>${esc(zip)}</b> · quote at checkout</span>`; }
+function tags(p){ const t = []; if (p.floor) t.push('<span class="badge">On the floor</span>'); if (p.qty === 1) t.push('<span class="badge red">Last one</span>'); return t.join(''); }
+function card(p){
+  const alt = p.images[1];
+  return `<article class="pc">
+    <div class="ph" onclick="go('/p/${p.id}')">
+      <div class="tags">${tags(p)}</div>
+      <img class="main ${alt?'has-alt':''}" loading="lazy" src="${img(p.images[0])}" alt="${esc(p.name)}">
+      ${alt ? `<img class="alt" loading="lazy" src="${img(alt)}" alt="">` : ''}
+      <button class="qv" onclick="event.stopPropagation();quick('${p.id}')">Quick look</button>
+    </div>
+    <button class="heart ${wish.includes(p.id)?'on':''}" onclick="toggleWish('${p.id}',this)" aria-label="Save">${I.heart}</button>
+    <div class="bd">
+      <div class="br">${esc(p.brand)}</div>
+      <div class="nm" onclick="go('/p/${p.id}')">${esc(p.name)}</div>
+      <div class="mt">${esc([p.type, p.size || (p.dims?.w ? p.dims.w+'"W' : ''), p.color].filter(Boolean).join(' · '))}</div>
+      <div>${price(p.price)}</div>
+      <div style="font-size:13px">${stock(p)}</div>
+      ${deliv(p)}
+      <button class="add" onclick="addCart('${p.id}',1)">Add to cart</button>
+    </div></article>`;
+}
+function mini(p){ return `<div class="mini" onclick="go('/p/${p.id}')"><div class="ph"><img loading="lazy" src="${img(p.images[0],360)}" alt=""></div><div class="t">${esc(p.name)}</div>${price(p.price)}</div>`; }
+function shelf(title, list, link){
+  if (!list.length) return '';
+  const id = 'r' + Math.random().toString(36).slice(2,8);
+  return `<section class="shelf"><h2>${title}${link?` <a href="${link}">See more</a>`:''}</h2>
+    <button class="rail-btn l" onclick="$('#${id}').scrollBy({left:-600})">${I.l}</button>
+    <div class="rail" id="${id}">${list.map(mini).join('')}</div>
+    <button class="rail-btn r" onclick="$('#${id}').scrollBy({left:600})">${I.r}</button></section>`;
+}
+
+// ---------- Home ----------
+let heroTimer;
+function home(){
+  const pick = ids => ids.map(byId).filter(Boolean);
+  const slides = [
+    {h:'Sink in. Stretch out.', p:'Power recliners and sofas with zero-gravity comfort, on our Redmond floor today.', bg:'linear-gradient(115deg,#121a17 0%,#335749 70%,#4d7a68 100%)', ids:['1777700','1768990'], link:'/search?dept=Living%20Room'},
+    {h:'Better sleep starts here.', p:'Aireloom, Beautyrest and Brooklyn Bedding. Lie down on them in the showroom.', bg:'linear-gradient(115deg,#141c2b 0%,#26406a 70%,#3b5f96 100%)', ids:['1771500','1774570'], link:'/search?dept=Mattresses'},
+    {h:'Gather around.', p:'Solid-wood dining tables, chairs and bar stools ready for local delivery.', bg:'linear-gradient(115deg,#2a1a12 0%,#6b4329 70%,#8d5f3f 100%)', ids:['1752290','1615930'], link:'/search?dept=Dining'},
+  ];
+  const box = (title, list, link, labels) => `<div class="box"><h3>${title}</h3><div class="quad">${list.slice(0,4).map((p,i)=>`<a href="#/p/${p.id}"><img loading="lazy" src="${img(p.images[0],300)}" alt=""><span>${esc(labels?labels[i]:p.type)}</span></a>`).join('')}</div><a class="more" href="${link}">Shop now</a></div>`;
+  const inDept = d => P.filter(p => p.dept === d);
+  app.innerHTML = `
+    <section class="hero">
+      ${slides.map((s,i)=>`<div class="slide ${i?'':'on'}" style="background:${s.bg}"><div><h1>${s.h}</h1><p>${s.p}</p><a class="pill-btn" href="#${s.link}">Shop now ${I.r}</a></div><div class="imgs">${pick(s.ids).map(p=>`<img src="${img(p.images[0],600)}" alt="">`).join('')}</div></div>`).join('')}
+      <button class="hero-arrow l" aria-label="Previous">${I.l}</button><button class="hero-arrow r" aria-label="Next">${I.r}</button>
+      <div class="dots">${slides.map((_,i)=>`<button class="${i?'':'on'}" aria-label="Slide ${i+1}"></button>`).join('')}</div>
+    </section>
+    <div class="boxes">
+      ${box('Living room', [byId('1760910'),byId('1766910'),byId('1751700'),byId('1744720')], '#/search?dept=Living%20Room')}
+      ${box('Bedroom', inDept('Bedroom'), '#/search?dept=Bedroom')}
+      ${box('Dining', inDept('Dining'), '#/search?dept=Dining')}
+      ${box('Mattresses &amp; bases', inDept('Mattresses'), '#/search?dept=Mattresses', inDept('Mattresses').map(p=>p.size+' · '+(p.comfort||p.type)))}
+    </div>
+    ${recent.length ? shelf('Your browsing history', recent.map(byId).filter(Boolean)) : ''}
+    ${shelf('Popular in living room', inDept('Living Room'), '#/search?dept=Living%20Room')}
+    ${shelf('Under $500', P.filter(p=>p.price<500).sort((a,b)=>a.price-b.price), '#/search?max=500')}
+    ${shelf('See it on our showroom floor', P.filter(p=>p.floor), '#/search?avail=See%20it%20in%20the%20showroom')}
+    <section class="shelf"><h2>Shop by brand</h2><div class="brands">${[...new Set(P.map(p=>p.brand))].sort().map(b=>`<a href="#/search?brand=${encodeURIComponent(b)}">${esc(b)}</a>`).join('')}</div></section>`;
+  let i = 0; const ss = $$('.slide'), ds = $$('.dots button');
+  const show = n => { i = (n + ss.length) % ss.length; ss.forEach((s,k)=>s.classList.toggle('on',k===i)); ds.forEach((d,k)=>d.classList.toggle('on',k===i)); };
+  ds.forEach((d,k) => d.onclick = () => show(k));
+  $('.hero-arrow.l').onclick = () => show(i-1); $('.hero-arrow.r').onclick = () => show(i+1);
+  clearInterval(heroTimer); heroTimer = setInterval(() => show(i+1), 6000);
+}
+
+// ---------- Results ----------
+function results(params){
+  const q = params.get('q') || '', sort = params.get('sort') || 'rel';
+  const min = parseFloat(params.get('min')), max = parseFloat(params.get('max'));
+  const sel = Object.fromEntries(FACETS.map(f => [f.k, params.getAll(f.k)]));
+  let pool = find(q);
+  if (params.get('saved')) pool = pool.filter(([p]) => wish.includes(p.id));
+  const ok = (p, skip) => FACETS.every(f => f.k === skip || !sel[f.k].length || f.g(p).some(v => sel[f.k].includes(v))) && !(p.price < min) && !(p.price > max);
+  const hits = pool.filter(([p]) => ok(p));
+  const S = {rel:(a,b)=>b[1]-a[1]||b[0].qty-a[0].qty, low:(a,b)=>a[0].price-b[0].price, high:(a,b)=>b[0].price-a[0].price, stock:(a,b)=>b[0].qty-a[0].qty, az:(a,b)=>a[0].name.localeCompare(b[0].name)};
+  hits.sort(S[sort] || S.rel);
+
+  const with_ = (k, v, on) => { const np = cur(); const vals = np.getAll(k).filter(x => x !== v); np.delete(k); (on ? vals : [...vals, v]).forEach(x => np.append(k, x)); return '#/search?' + np; };
+  const fhtml = FACETS.map(f => {
+    const all = new Set(), n = {};
+    pool.forEach(([p]) => { f.g(p).forEach(v => all.add(v)); if (ok(p, f.k)) f.g(p).forEach(v => n[v] = (n[v]||0) + 1); });
+    if (!all.size) return '';
+    const opts = [...all].sort(f.o ? (a,b) => f.o.indexOf(a) - f.o.indexOf(b) : (a,b) => a.localeCompare(b));
+    const clr = sel[f.k].length ? `<button onclick="const np=cur();np.delete('${f.k}');go('/search',np)">Clear</button>` : '';
+    const body = f.sw
+      ? `<div class="sw-row">${opts.map(v => `<a class="sw ${sel[f.k].includes(v)?'on':''} ${n[v]?'':'zero'}" style="background:${COLORS.find(c=>c[0]===v)[1]}" title="${esc(v)} (${n[v]||0})" href="${with_(f.k, v, sel[f.k].includes(v))}"></a>`).join('')}</div>`
+      : opts.map(v => { const on = sel[f.k].includes(v); return `<label class="opt ${n[v]||on?'':'zero'}"><input type="checkbox" ${on?'checked':''} onchange="location.hash='${with_(f.k, v, on).slice(1).replace(/'/g,"\\'")}'"> ${esc(v)} <span class="n">${n[v]||0}</span></label>`; }).join('');
+    const pr = f.k === 'price' ? `<form class="pr-in" onsubmit="event.preventDefault();const np=cur();for(const k of ['min','max']){const v=this[k].value;v?np.set(k,v):np.delete(k)}go('/search',np)"><input name="min" type="number" placeholder="$ Min" value="${isNaN(min)?'':min}"><input name="max" type="number" placeholder="$ Max" value="${isNaN(max)?'':max}"><button>Go</button></form>` : '';
+    return `<div class="fg"><h4>${f.l}${clr}</h4>${body}${pr}</div>`;
+  }).join('');
+
+  const chips = [];
+  if (q) chips.push(['q', q, `"${q}"`]);
+  if (params.get('saved')) chips.push(['saved', '1', 'Wishlist']);
+  FACETS.forEach(f => sel[f.k].forEach(v => chips.push([f.k, v, v])));
+  if (!isNaN(min)) chips.push(['min', String(min), 'Over ' + money(min)]);
+  if (!isNaN(max)) chips.push(['max', String(max), 'Under ' + money(max)]);
+  const chipH = chips.map(([k,v,l]) => `<a class="chip" href="${with_(k, v, true)}">${esc(l)} ${I.x}</a>`).join('') + (chips.length > 1 ? `<a class="chip" href="#/search">Clear all</a>` : '');
+  const title = q ? `"${esc(q)}"` : params.get('saved') ? 'your wishlist' : sel.dept.length === 1 ? esc(sel.dept[0]) : 'all in-stock items';
+
+  app.innerHTML = `
+    <div class="res-top">
+      <div class="count">${hits.length ? `1-${hits.length} of ${hits.length}` : 'No'} results for <b>${title}</b></div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="ftoggle" onclick="$('#rf').classList.add('open')">${I.filter} Filters${chips.length?` (${chips.length})`:''}</button>
+        <select class="sort" onchange="const np=cur();np.set('sort',this.value);go('/search',np)">${[['rel','Featured'],['low','Price: Low to High'],['high','Price: High to Low'],['stock','Most in stock'],['az','Name: A to Z']].map(([v,l])=>`<option value="${v}" ${v===sort?'selected':''}>Sort by: ${l}</option>`).join('')}</select>
+      </div>
+    </div>
+    <div class="layout">
+      <aside class="rail-f" id="rf">
+        <div class="fg" style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:16px">Filters</b>
+          <span><a href="#/search${q?'?q='+encodeURIComponent(q):''}" style="color:var(--brand-2);font-weight:600;font-size:13px">Clear all</a>
+          <button class="ftoggle" style="margin-left:8px" onclick="$('#rf').classList.remove('open')">Show ${hits.length}</button></span></div>
+        ${fhtml}
+      </aside>
+      <section>
+        ${chips.length ? `<div class="chips">${chipH}</div>` : ''}
+        ${hits.length ? `<div class="grid">${hits.map(([p],i) => card(p).replace('class="pc"', `class="pc" style="animation-delay:${Math.min(i,12)*30}ms"`)).join('')}</div>`
+          : `<div class="empty"><h3 style="color:var(--ink)">No results match those filters</h3>Try removing a filter, or call 541-548-2066. We can special-order thousands of other pieces.</div>`}
+      </section>
+    </div>`;
+  $('#q').value = q; $('#sdept').value = sel.dept.length === 1 ? sel.dept[0] : '';
+}
+
+// ---------- Product ----------
+function product(id){
+  const p = byId(id);
+  if (!p) { app.innerHTML = `<div class="wrap"><div class="empty">That item isn't available. <a href="#/" style="color:var(--brand-2)">Back to home</a></div></div>`; return; }
+  recent = [id, ...recent.filter(x => x !== id)].slice(0, 12); store.set('recent', recent);
+  const d = p.dims || {}, cm = n => Math.round(n * 2.54);
+  const dimTxt = [d.w&&`${d.w}"W`, d.d&&`${d.d}"D`, d.h&&`${d.h}"H`].filter(Boolean).join(' x ');
+  const facts = [['Brand',p.brand],['Collection',p.collection],['Color',p.color],['Material',p.material],['Style',p.style],['Size',p.size],['Firmness',p.comfort],['Dimensions',dimTxt]].filter(x=>x[1]);
+  const details = [['Brand',p.brand],['Collection',p.collection],['Category',p.type],['Color',p.color],['Material',p.material],['Style',p.style],['Dimensions (W x D x H)',dimTxt],['Weight',d.lbs&&d.lbs+' lbs'],['Wilson\'s item #',p.item_id.replace(/^0+/,'')],['Manufacturer model',p.mfr_sku],...Object.entries(p.specs||{})].filter(x=>x[1]);
+  const same = P.filter(x => x.id !== id && (x.collection && x.collection === p.collection));
+  const also = P.filter(x => x.id !== id && x.dept === p.dept && !same.includes(x));
+  const qtyOpts = Array.from({length: Math.max(1, Math.min(p.qty, 10))}, (_,i) => `<option>${i+1}</option>`).join('');
+  app.innerHTML = `
+    <div class="crumb"><a href="#/">Home</a> › <a href="#/search?dept=${encodeURIComponent(p.dept)}">${esc(p.dept)}</a> › <a href="#/search?dept=${encodeURIComponent(p.dept)}&type=${encodeURIComponent(p.type)}">${esc(p.type)}</a></div>
+    <div class="pdp">
+      <div class="gal">
+        <div class="th">${p.images.map((u,i)=>`<button data-i="${i}" class="${i?'':'on'}" aria-label="Image ${i+1}"><img src="${img(u,140)}" alt=""></button>`).join('')}</div>
+        <div class="stage" id="stage"><img id="big" src="${img(p.images[0],1200)}" alt="${esc(p.name)}">
+          ${p.images.length>1?`<button class="ar l" aria-label="Previous">${I.l}</button><button class="ar r" aria-label="Next">${I.r}</button>`:''}
+          <span class="ct" id="ct">1 / ${p.images.length}</span></div>
+      </div>
+      <div class="info">
+        <a class="bl" href="#/search?brand=${encodeURIComponent(p.brand)}">Visit the ${esc(p.brand)} store</a>
+        <h1>${esc(p.name)}</h1>
+        <div class="ids">Item #${esc(p.item_id.replace(/^0+/,''))} · Model ${esc(p.mfr_sku)}</div>
+        <div style="margin-top:6px">${tags(p)}</div>
+        <hr>
+        ${price(p.price, true)}
+        <div style="margin-top:6px;font-size:13px;color:var(--muted)">Special financing available on approved credit</div>
+        <hr>
+        <dl class="kv">${facts.map(([k,v])=>`<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+        <hr>
+        <div class="about"><h3>About this item</h3><ul>${(p.features||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>
+      </div>
+      <div class="buy">
+        ${price(p.price, true)}
+        ${deliv(p)}
+        <button class="zip" onclick="askZip()">Change delivery ZIP (${esc(zip)})</button>
+        <div class="stockline">${stock(p, true)}</div>
+        <ul class="locs">${Object.entries(p.stock).map(([l,n])=>`<li><span>${esc(l)}</span><b>${n}</b></li>`).join('')}</ul>
+        <label style="font-size:13px">Quantity: <select id="qty">${qtyOpts}</select></label>
+        <button class="btn y" onclick="addCart('${p.id}',+$('#qty').value)">Add to Cart</button>
+        <button class="btn o" onclick="addCart('${p.id}',+$('#qty').value,true)">Buy Now</button>
+        <button class="btn g" onclick="toast('Reserved. A Wilson\\'s associate will call to arrange delivery or pickup (prototype).')">Reserve with deposit</button>
+        <button class="btn g ${wish.includes(p.id)?'on':''}" onclick="toggleWish('${p.id}');this.textContent=wish.includes('${p.id}')?'Saved to wishlist':'Add to wishlist'">${wish.includes(p.id)?'Saved to wishlist':'Add to wishlist'}</button>
+        <div class="secure">${I.lock} Secure transaction · Sold by Wilson's of Redmond</div>
+        ${p.parts_note ? `<div class="deliv">${esc(p.parts_note)}</div>` : ''}
+      </div>
+    </div>
+    ${same.length ? shelf('From the same collection', same) : ''}
+    <section class="sec"><h2>Product details</h2><div class="spec">${details.map(([k,v])=>`<div><span>${esc(k)}</span><span>${esc(v)}</span></div>`).join('')}</div></section>
+    <section class="sec"><h2>Dimensions</h2>
+      ${dimTxt ? `<div class="dimrow">${[['w','Width'],['d','Depth'],['h','Height']].filter(([k])=>d[k]!=null).map(([k,l])=>`<div class="dim"><b>${d[k]}"</b><span>${l} · ${cm(d[k])} cm</span></div>`).join('')}${d.lbs?`<div class="dim"><b>${d.lbs} lb</b><span>Weight</span></div>`:''}</div>${d.note?`<p class="deliv">${esc(d.note)}</p>`:''}` : '<p class="deliv">Ask us for exact dimensions.</p>'}
+    </section>
+    <section class="sec"><h2>Product description</h2><p class="desc">${esc(p.description)}</p>
+      <div class="src">Content source: <a href="${esc(p.source)}" target="_blank" rel="noopener">${esc(new URL(p.source).hostname)}</a></div></section>
+    ${shelf('Customers also viewed', also)}
+    ${recent.length > 1 ? shelf('Your browsing history', recent.filter(x=>x!==id).map(byId).filter(Boolean)) : ''}`;
+  $('#mbar').innerHTML = `<div>${price(p.price)}</div><button class="btn y" onclick="addCart('${p.id}',1)">Add to Cart</button>`;
+
+  let k = 0; const big = $('#big'), stage = $('#stage');
+  const set = n => { k = (n + p.images.length) % p.images.length; big.src = img(p.images[k],1200); $('#ct').textContent = `${k+1} / ${p.images.length}`; $$('.th button').forEach(b => b.classList.toggle('on', +b.dataset.i === k)); };
+  $$('.th button').forEach(b => { b.onclick = () => set(+b.dataset.i); b.onmouseenter = () => set(+b.dataset.i); });
+  stage.querySelector('.ar.l')?.addEventListener('click', e => { e.stopPropagation(); set(k-1); });
+  stage.querySelector('.ar.r')?.addEventListener('click', e => { e.stopPropagation(); set(k+1); });
+  stage.addEventListener('mousemove', e => { if (!stage.classList.contains('zoom')) return; const r = stage.getBoundingClientRect(); big.style.transformOrigin = `${(e.clientX-r.left)/r.width*100}% ${(e.clientY-r.top)/r.height*100}%`; });
+  stage.addEventListener('click', e => { if (e.target.closest('.ar')) return; stage.classList.toggle('zoom'); stage.dispatchEvent(new MouseEvent('mousemove', e)); });
+  stage.addEventListener('mouseleave', () => stage.classList.remove('zoom'));
+  let sx; stage.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+  stage.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) set(k + (dx < 0 ? 1 : -1)); });
+}
+
+// ---------- Quick look ----------
+function quick(id){
+  const p = byId(id);
+  $('#qvM').innerHTML = `<div style="display:flex;justify-content:flex-end;padding:10px 12px 0"><button class="x" onclick="closeAll()" aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="qvg" style="padding-top:0"><img src="${img(p.images[0],800)}" alt="">
+      <div style="display:flex;flex-direction:column;gap:10px"><div class="pc" style="all:unset"><div class="br" style="font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase">${esc(p.brand)}</div></div>
+        <h2 style="margin:0;font-size:22px;line-height:1.25">${esc(p.name)}</h2>${price(p.price,true)}<div>${stock(p,true)}</div>${deliv(p)}
+        <ul style="margin:0;padding-left:18px;line-height:1.6">${(p.features||[]).slice(0,4).map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+        <button class="btn y" onclick="addCart('${p.id}',1)">Add to Cart</button>
+        <button class="btn g" onclick="closeAll();go('/p/${p.id}')">See full details</button></div></div>`;
+  open('#qvM');
+}
+
+// ---------- Cart / wishlist ----------
+function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+function syncBadges(){ $('#cartN').textContent = cartCount(); $('#wlN').textContent = wish.length; }
+function addCart(id, n, buyNow){ const p = byId(id); cart[id] = Math.min((cart[id]||0) + n, Math.max(p.qty,1)); store.set('cart', cart); syncBadges();
+  if (buyNow) return checkout(); renderCart(); open('#cartD'); }
+function setQty(id, n){ const p = byId(id); if (n <= 0) delete cart[id]; else cart[id] = Math.min(n, Math.max(p.qty,1)); store.set('cart', cart); syncBadges(); renderCart(); }
+function renderCart(){
+  const ids = Object.keys(cart), sub = ids.reduce((s,id) => s + byId(id).price * cart[id], 0);
+  $('#cartBody').innerHTML = ids.length ? ids.map(id => { const p = byId(id); return `<div class="ci"><img src="${img(p.images[0],200)}" alt=""><div>
+      <div class="nm">${esc(p.name)}</div><div style="font-size:13px;margin:2px 0">${stock(p,true)}</div>${price(p.price)}
+      <div><span class="stepper"><button onclick="setQty('${id}',${cart[id]-1})" aria-label="Less">${cart[id]===1?'🗑':'−'}</button><span>${cart[id]}</span><button onclick="setQty('${id}',${cart[id]+1})" aria-label="More">+</button></span></div></div></div>`; }).join('')
+    : `<div style="text-align:center;padding:40px 0;color:var(--muted)"><h3 style="color:var(--ink)">Your cart is empty</h3><a href="#/search" onclick="closeAll()" style="color:var(--brand-2);font-weight:600">Shop today's in-stock items</a></div>`;
+  $('#cartFoot').innerHTML = ids.length ? `<div style="font-size:18px">Subtotal (${cartCount()} item${cartCount()>1?'s':''}): <b>${money(sub)}</b></div><div class="deliv">Delivery &amp; tax calculated at checkout</div><button class="btn y" onclick="checkout()">Proceed to checkout</button>` : '';
+}
+function checkout(){ closeAll(); toast('Checkout would hand off to Shopify here (prototype).'); }
+function toggleWish(id, el){ wish = wish.includes(id) ? wish.filter(x=>x!==id) : [...wish, id]; store.set('wish', wish); syncBadges(); el?.classList.toggle('on', wish.includes(id)); toast(wish.includes(id) ? 'Saved to your wishlist' : 'Removed from wishlist'); }
+function askZip(){ const z = prompt('Enter your ZIP code for delivery options', zip); if (z && /^\d{5}$/.test(z.trim())) { zip = z.trim(); store.set('zip', zip); $('#zipLbl').textContent = (local()?'Central OR ':'') + zip; route(); } }
+
+// ---------- Overlays ----------
+function open(sel){ $('#scrim').classList.add('on'); $(sel).classList.add('on'); }
+function closeAll(){ $$('.scrim,.drawer,.modal').forEach(e => e.classList.remove('on')); }
+$('#scrim').onclick = closeAll;
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+let tt; function toast(m){ const t = $('#toast'); t.textContent = m; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 3000); }
+
+// ---------- Header wiring ----------
+$('#sdept').innerHTML += DEPTS.map(d => `<option>${d}</option>`).join('');
+$('#subnav').innerHTML = `<a href="#/search">All in stock</a>` + DEPTS.map(d => `<a href="#/search?dept=${encodeURIComponent(d)}">${d}</a>`).join('')
+  + `<a href="#/search?avail=${encodeURIComponent('See it in the showroom')}">On the showroom floor</a><a href="#/search?max=500">Under $500</a><span class="promo">Special financing available</span>`;
+$('#menuBody').innerHTML = `<h4>Departments</h4>` + DEPTS.map(d => `<a href="#/search?dept=${encodeURIComponent(d)}" onclick="closeAll()">${d} <span>›</span></a>`).join('')
+  + `<h4>Brands</h4>` + [...new Set(P.map(p=>p.brand))].sort().map(b => `<a href="#/search?brand=${encodeURIComponent(b)}" onclick="closeAll()">${esc(b)} <span>›</span></a>`).join('');
+$('#menuBtn').onclick = () => open('#menuD');
+$('#cartBtn').onclick = () => { renderCart(); open('#cartD'); };
+$('#zipBtn').onclick = askZip;
+$('#zipLbl').textContent = (local()?'Central OR ':'') + zip;
+
+const q = $('#q'), sug = $('#sug'); let act = -1;
+function submit(){ const np = new URLSearchParams(); if (q.value.trim()) np.set('q', q.value.trim()); if ($('#sdept').value) np.set('dept', $('#sdept').value); sug.classList.remove('show'); q.blur(); go('/search', np); }
+$('#sform').onsubmit = e => { e.preventDefault(); submit(); };
+const hl = (s, t) => { const i = s.toLowerCase().indexOf(t.toLowerCase()); return i < 0 ? esc(s) : esc(s.slice(0,i)) + '<mark>' + esc(s.slice(i, i+t.length)) + '</mark>' + esc(s.slice(i+t.length)); };
+q.oninput = () => {
+  const t = q.value.trim(); act = -1;
+  if (t.length < 2) { sug.classList.remove('show'); return; }
+  const hits = find(t).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const cats = [...new Set(P.map(p=>p.type))].filter(c => c.toLowerCase().includes(t.toLowerCase())).slice(0,3);
+  sug.innerHTML = cats.map(c => `<div class="s" data-type="${esc(c)}"><svg class="ico" viewBox="0 0 24 24" style="color:var(--muted)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>${hl(c,t)} <small>in all departments</small></span></div>`).join('')
+    + hits.map(([p]) => `<div class="s" data-id="${p.id}"><img src="${img(p.images[0],100)}" alt=""><span>${hl(p.name,t)}<br><small>${esc(p.brand)} · ${money(p.price)}</small></span></div>`).join('');
+  sug.classList.toggle('show', !!sug.children.length);
+};
+sug.onclick = e => { const d = e.target.closest('.s'); if (!d) return; sug.classList.remove('show'); q.blur();
+  if (d.dataset.id) { q.value = ''; go('/p/' + d.dataset.id); } else go('/search', new URLSearchParams({type: d.dataset.type})); };
+q.onkeydown = e => { const it = [...sug.children]; if (!it.length || !sug.classList.contains('show')) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); act = (act + (e.key === 'ArrowDown' ? 1 : -1) + it.length) % it.length; it.forEach((x,i) => x.classList.toggle('active', i === act)); }
+  else if (e.key === 'Enter' && act >= 0) { e.preventDefault(); it[act].click(); }
+  else if (e.key === 'Escape') sug.classList.remove('show'); };
+document.addEventListener('click', e => { if (!e.target.closest('.search')) sug.classList.remove('show'); });
+
+// ---------- Router ----------
+function route(){
+  const {path, params} = hashState();
+  clearInterval(heroTimer); closeAll();
+  document.body.classList.toggle('pdp-on', path.startsWith('/p/'));
+  $('#mbar').innerHTML = '';
+  $$('#subnav a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === location.hash));
+  if (!P.length) { app.innerHTML = `<div class="wrap"><div class="empty">Product data didn't load (data/products.js). Open <b>Wilsons-Prototype.html</b> instead.</div></div>`; return; }
+  if (path.startsWith('/p/')) product(path.split('/')[2]);
+  else if (path === '/search') results(params);
+  else home();
+  if (!path.startsWith('/p/') || true) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+syncBadges(); route();
+</script>
+</body>
+</html>
